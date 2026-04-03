@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, MapPin, Check, ArrowDown, ArrowUp, Instagram, Facebook, Youtube } from 'lucide-react';
+import { MapPin, Check, ArrowDown, ArrowUp } from 'lucide-react';
+import SiteHeader from '@/components/SiteHeader';
+import SiteFooter from '@/components/SiteFooter';
 
 import logo from '@/assets/logo.png';
 import heroDrone from '@/assets/hero-drone.jpg';
@@ -15,78 +17,24 @@ import hostelVibes from '@/assets/hostel-vibes.jpg';
 import beachSunset from '@/assets/beach-sunset.jpg';
 
 export default function Index() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-      setShowScrollTop(window.scrollY > 500);
-    };
+    const handleScroll = () => setShowScrollTop(window.scrollY > 500);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
-  const navLinks = [
-    { href: '#home', label: 'Home' },
-    { href: '#tours', label: 'Tours & Activities' },
-    { href: '#surfcamp', label: 'Surf Camp' },
-    { href: '#gallery', label: 'Gallery' },
-    { href: '#contact', label: 'Contact' },
-  ];
-
   return (
     <div className="font-sans text-foreground bg-cream min-h-screen">
-      {/* Navigation */}
-      <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-cream shadow-lg py-2' : 'bg-transparent py-4'}`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-          <a href="#home" className="flex items-center gap-3">
-            <img src={logo} alt="Mad Monkey Surf Camp" className="w-12 h-12 object-contain" />
-            <span className={`font-display text-xl md:text-2xl tracking-wider transition-colors duration-300 ${isScrolled ? 'text-foreground' : 'text-primary-foreground'}`}>
-              MAD MONKEY
-            </span>
-          </a>
+      <SiteHeader />
 
-          <div className="hidden md:flex items-center gap-6 lg:gap-8">
-            {navLinks.map(link => (
-              <a key={link.href} href={link.href} className={`text-sm font-semibold uppercase tracking-wider transition-colors hover:text-coral ${isScrolled ? 'text-foreground' : 'text-primary-foreground'}`}>
-                {link.label}
-              </a>
-            ))}
-            <a href="#book" className="bg-coral text-primary-foreground px-6 py-2.5 rounded-full font-bold text-sm uppercase tracking-wider hover:bg-coral/90 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 duration-200">
-              Book Now
-            </a>
-          </div>
-
-          <button className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-            {mobileMenuOpen
-              ? <X size={28} className={isScrolled ? 'text-foreground' : 'text-primary-foreground'} />
-              : <Menu size={28} className={isScrolled ? 'text-foreground' : 'text-primary-foreground'} />}
-          </button>
-        </div>
-
-        {mobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-cream shadow-lg py-6 px-6 flex flex-col gap-4 animate-fade-in">
-            {navLinks.map(link => (
-              <a key={link.href} href={link.href} onClick={() => setMobileMenuOpen(false)} className="font-semibold text-lg uppercase tracking-wider">
-                {link.label}
-              </a>
-            ))}
-            <a href="#book" onClick={() => setMobileMenuOpen(false)} className="bg-coral text-primary-foreground text-center px-6 py-3 rounded-full font-bold mt-2 uppercase tracking-wider">
-              Book Now
-            </a>
-          </div>
-        )}
-      </nav>
-
-      {/* Hero — Full-bleed with wave divider (Mojo style) */}
+      {/* Hero */}
       <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
         <img src={heroDrone} alt="Kuta Lombok aerial view" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-foreground/40 via-foreground/20 to-foreground/60 z-[1]" />
-
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <img src={logo} alt="Mad Monkey Surf Camp Logo" className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 drop-shadow-2xl" />
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-primary-foreground mb-4 tracking-wider drop-shadow-lg">
@@ -104,12 +52,9 @@ export default function Index() {
             </a>
           </div>
         </div>
-
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
           <a href="#about" className="text-primary-foreground opacity-80 hover:opacity-100"><ArrowDown size={36} /></a>
         </div>
-
-        {/* Wave divider */}
         <div className="absolute bottom-0 left-0 w-full z-10">
           <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full block">
             <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,80 1440,60 L1440,120 L0,120 Z" fill="hsl(var(--cream))" />
@@ -117,7 +62,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* About */}
       <section id="about" className="py-16 md:py-28 bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
@@ -142,7 +87,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* What to Do — Mojo-style alternating image+text blocks */}
+      {/* What to Do */}
       <section className="bg-cream pb-16 md:pb-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -159,30 +104,24 @@ export default function Index() {
 
       {/* Surf Camp Pricing */}
       <section id="surfcamp" className="relative overflow-hidden">
-        {/* Wave divider top */}
         <div className="bg-cream">
           <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full block">
             <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="hsl(var(--blue))" />
           </svg>
         </div>
-
         <div className="bg-blue py-16 md:py-28 relative">
           <div className="absolute top-0 right-0 w-64 h-64 bg-primary-foreground opacity-10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-coral opacity-10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
-
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <p className="text-coral font-bold uppercase tracking-widest text-sm mb-3">Find Your Dream Surf Adventure</p>
             <h2 className="font-display text-5xl md:text-7xl mb-2 tracking-wide">7-DAY SURF CAMP</h2>
             <p className="text-xl font-bold text-foreground/70 mb-8 uppercase tracking-wider">Starting Every Monday at 9:00 AM</p>
-
             <p className="text-lg text-foreground/80 mb-10 max-w-3xl mx-auto leading-relaxed">
               Ready to level up your island life? Join our epic Surf Camp, kicking off every Monday at 9AM, where salty hair, new mates, and unforgettable sessions are all part of the plan.
             </p>
-
             <div className="inline-block bg-coral text-primary-foreground font-display text-4xl md:text-5xl px-8 py-4 rounded-2xl shadow-xl mb-12 transform -rotate-2">
               $880 USD <span className="text-2xl opacity-80">/ 15,000,000 IDR</span>
             </div>
-
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-10">
               {["Transport included", "All meals included", "Surf board & rash vest rental", "Max 16 surfers per week"].map((item) => (
                 <div key={item} className="bg-card p-6 rounded-2xl shadow-md flex items-center gap-4 text-left transform hover:-translate-y-1 transition-transform">
@@ -191,24 +130,19 @@ export default function Index() {
                 </div>
               ))}
             </div>
-
             <div className="flex flex-col items-center gap-2 mb-10 text-sm font-medium text-foreground/60">
               <p>Exclusions: Evening meals</p>
               <p>Things to bring: Surfing attire</p>
               <p className="text-coral font-bold">Cancellation policy: Non-refundable</p>
             </div>
-
             <a href="#book" className="inline-block bg-coral text-primary-foreground px-10 py-5 rounded-full font-bold text-xl uppercase tracking-wider hover:bg-coral/90 transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1 mb-8">
               Book Surf Camp
             </a>
-
             <div className="bg-pink inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold shadow-sm mx-auto">
               <MapPin size={18} /> Meet at the restaurant at 9AM
             </div>
           </div>
         </div>
-
-        {/* Wave divider bottom */}
         <div className="bg-cream">
           <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full block rotate-180">
             <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="hsl(var(--blue))" />
@@ -224,12 +158,10 @@ export default function Index() {
             <h2 className="font-display text-5xl md:text-6xl mb-4 tracking-wide">More Adventures in Kuta Lombok</h2>
             <p className="text-xl text-muted-foreground">From waterfalls to snorkeling — there's something for everyone</p>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <TourCard image={surfLesson3} alt="Surf Lesson" badge="DAILY" badgeColor="bg-yellow" title="Surf Lesson Kuta Lombok" schedule="Every Day, 9:00 AM – 12:00 PM | 3 Hours" price="500,000 Rp / $30.50 USD" description="A surf lesson in surfer's paradise with a qualified surf instructor. Go for a private lesson, or team up with your friends!" />
             <TourCard image={snorkelingGili} alt="Snorkeling" badge="EVERY WEDNESDAY" badgeColor="bg-yellow" title="Madventure Snorkeling — Secret Gili's" schedule="Every Wed, 10:00 AM – 5:00 PM | 7 Hours" price="500,000 Rp / $30.50 USD" description="See the unseen underwater world of Gili Nanggu, Sudak and Kedis. Guided snorkeling with lunch and boat transport included." />
             <TourCard image={waterfallTour} alt="Waterfall Tour" badge="WEEKLY" badgeColor="bg-blue" title="Lombok Waterfall Tour + Family Dinner" schedule="Weekly | 7 Hours" price="350,000 Rp / $22.70 USD" description="Chase waterfalls, indulge in homemade lunch, strike a pose amidst picturesque rice fields. Includes a heartwarming family dinner." />
-
             {/* Pool Party - Highlighted */}
             <div className="bg-card rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow flex flex-col group border-2 border-pink relative transform md:-translate-y-2">
               <div className="absolute -top-4 -right-4 bg-pink font-display text-2xl px-6 py-2 rounded-full shadow-lg z-10 rotate-12 border-2 border-card">FREE</div>
@@ -245,7 +177,6 @@ export default function Index() {
                 <a href="#book" className="block text-center bg-coral text-primary-foreground font-bold py-3 rounded-full hover:bg-coral/90 transition-colors shadow-md uppercase tracking-wider">Join The Party</a>
               </div>
             </div>
-
             <TourCard image={pinkBeach} alt="Pink Beach" badge="EVERY SUNDAY" badgeColor="bg-pink" title="Pink Beach Tour" schedule="Every Sun, 9:00 AM – 5:00 PM | 8 Hours" price="375,000 Rp / $22.43 USD" description="Snorkelling tour heading to Pulau Pasir and ending on the famous Pink Beach. Take in the surrounding waters and paradise views." />
           </div>
         </div>
@@ -312,50 +243,12 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-foreground text-primary-foreground pt-20 pb-10 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-10 mb-16 border-b border-primary-foreground/10 pb-16">
-            <div className="flex flex-col items-center md:items-start">
-              <div className="flex items-center gap-3 mb-6">
-                <img src={logo} alt="Mad Monkey" className="w-12 h-12 object-contain" />
-                <span className="font-display text-2xl tracking-wider">MAD MONKEY</span>
-              </div>
-              <p className="text-primary-foreground/60 text-sm max-w-xs text-center md:text-left">
-                Mad Monkey Kuta Lombok — Jl. Pariwisata Pantai Kuta, Lombok
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center md:items-start">
-              <h4 className="font-bold mb-4 text-lg">Quick Links</h4>
-              <nav className="flex flex-col gap-3 text-center md:text-left text-primary-foreground/70">
-                <a href="#tours" className="hover:text-coral transition-colors">Tours</a>
-                <a href="#surfcamp" className="hover:text-coral transition-colors">Surf Camp</a>
-                <a href="#gallery" className="hover:text-coral transition-colors">Gallery</a>
-                <a href="#contact" className="hover:text-coral transition-colors">Contact</a>
-              </nav>
-            </div>
-
-            <div className="flex flex-col items-center md:items-start">
-              <h4 className="font-bold mb-4 text-lg">Follow the Vibe</h4>
-              <div className="flex gap-4 text-coral">
-                <a href="#" className="hover:text-primary-foreground transition-colors transform hover:scale-110"><Instagram size={24} /></a>
-                <a href="#" className="hover:text-primary-foreground transition-colors transform hover:scale-110"><Facebook size={24} /></a>
-                <a href="#" className="hover:text-primary-foreground transition-colors transform hover:scale-110"><Youtube size={24} /></a>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center text-blue text-sm">
-            <p>© 2026 Mad Monkey Hostels. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
 
       {/* Scroll to top */}
       <button
         onClick={scrollToTop}
-        className={`fixed bottom-8 right-8 bg-coral text-primary-foreground p-3 rounded-full shadow-lg hover:bg-coral/90 transition-all duration-300 z-50 ${showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}
+        className={`fixed bottom-20 lg:bottom-8 right-8 bg-coral text-primary-foreground p-3 rounded-full shadow-lg hover:bg-coral/90 transition-all duration-300 z-40 ${showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}
         aria-label="Scroll to top"
       >
         <ArrowUp size={24} />
