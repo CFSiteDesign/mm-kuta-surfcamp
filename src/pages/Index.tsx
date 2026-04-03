@@ -302,45 +302,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-foreground text-primary-foreground pt-20 pb-10 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-10 mb-16 border-b border-primary-foreground/10 pb-16">
-            <div className="flex flex-col items-center md:items-start">
-              <div className="flex items-center gap-3 mb-6">
-                <img src={logo} alt="Mad Monkey" className="w-12 h-12 object-contain" />
-                <span className="font-display text-2xl tracking-wider">MAD MONKEY</span>
-              </div>
-              <p className="text-primary-foreground/60 text-sm max-w-xs text-center md:text-left">
-                Mad Monkey Kuta Lombok — Jl. Pariwisata Pantai Kuta, Lombok
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center md:items-start">
-              <h4 className="font-bold mb-4 text-lg">Quick Links</h4>
-              <nav className="flex flex-col gap-3 text-center md:text-left text-primary-foreground/70">
-                <a href="#tours" className="hover:text-coral transition-colors">Tours</a>
-                <a href="#surfcamp" className="hover:text-coral transition-colors">Surf Camp</a>
-                <a href="#gallery" className="hover:text-coral transition-colors">Gallery</a>
-                <a href="#contact" className="hover:text-coral transition-colors">Contact</a>
-              </nav>
-            </div>
-
-            <div className="flex flex-col items-center md:items-start">
-              <h4 className="font-bold mb-4 text-lg">Follow the Vibe</h4>
-              <div className="flex gap-4 text-coral">
-                <a href="#" className="hover:text-primary-foreground transition-colors transform hover:scale-110"><Instagram size={24} /></a>
-                <a href="#" className="hover:text-primary-foreground transition-colors transform hover:scale-110"><Facebook size={24} /></a>
-                <a href="#" className="hover:text-primary-foreground transition-colors transform hover:scale-110"><Youtube size={24} /></a>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center text-blue text-sm">
-            <p>© 2026 Mad Monkey Hostels. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
 
       {/* Scroll to top */}
       <button
