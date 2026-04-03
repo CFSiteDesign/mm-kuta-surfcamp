@@ -32,11 +32,11 @@ export default function Index() {
 
       {/* ===================== HERO ===================== */}
       <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
-        <img src={heroDrone} alt="Kuta Lombok aerial view" className="absolute inset-0 w-full h-full object-cover" />
+        <img src={heroDrone} alt="Kuta Lombok Surf Camp" className="absolute inset-0 w-full h-full object-cover scale-125 object-center" />
         <div className="absolute inset-0 bg-foreground/30 z-[1]" />
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-yellow text-stroke tracking-wider drop-shadow-lg uppercase">
-            Mad Monkey Surf Camp Lombok
+            Kuta Lombok Surf Camp
           </h1>
           <div className="mt-10">
             <a href="#surfcamp" className="inline-block bg-pink text-primary-foreground px-10 py-4 font-display text-2xl uppercase tracking-wider hover:brightness-110 transition-all shadow-lg">
@@ -96,7 +96,7 @@ export default function Index() {
               </svg>
             </div>
             <div className="torn-edge-all overflow-hidden">
-              <img src={hostelVibes} alt="Mad Monkey Kuta Lombok Resort" className="w-full h-[400px] md:h-[600px] object-cover" loading="lazy" />
+              <img src={surfLesson1} alt="Surf camp in Kuta Lombok" className="w-full h-[400px] md:h-[600px] object-cover" loading="lazy" />
             </div>
           </div>
         </div>
@@ -106,10 +106,10 @@ export default function Index() {
       <section className="bg-cream py-12 md:py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-display text-3xl md:text-5xl text-yellow text-stroke-sm uppercase tracking-wider mb-6">
-            Mad Monkey Kuta Lombok: Your Surf Retreat Awaits
+            Kuta Lombok Surf Camp: Your Surf Retreat Awaits
           </h2>
           <p className="text-base md:text-lg text-foreground/80 max-w-4xl leading-relaxed">
-            Situated in the heart of Kuta Lombok, offering guests a tranquil retreat just a short walk from the area's vibrant attractions. Located approximately 1.1 km from the pristine Kuta Beach, visitors can easily enjoy sun-soaked days by the sea. Immerse yourself in the surf lifestyle as you ride the waves by day and chill out with the Mad Monkey crew by night. Savour amazing food, go for happy hour, and create unforgettable memories in this vibrant surf community.
+            Welcome to the ultimate surf camp experience in Kuta Lombok. Whether you're picking up a board for the first time or you're an experienced surfer chasing reef breaks, our camp puts you right in the heart of Indonesia's best waves. Ride world-class breaks by day, chill with the crew by night — surf lessons, board rentals, and guided sessions are all part of the package. Savour amazing food, go for happy hour, and create unforgettable memories in this vibrant surf community.
           </p>
         </div>
       </section>
