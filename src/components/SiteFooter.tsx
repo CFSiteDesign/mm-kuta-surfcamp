@@ -1,5 +1,5 @@
 import { Instagram, Facebook, Youtube } from 'lucide-react';
-import logo from '@/assets/logo.png';
+import logo from '@/assets/surf-camp-logo.png';
 
 const MM_BASE = 'https://madmonkeyhostels.com';
 

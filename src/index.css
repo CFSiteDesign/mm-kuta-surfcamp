@@ -6,7 +6,7 @@
 
 @layer base {
   :root {
-    --background: 40 33% 95%;
+    --background: 24 60% 97%;
     --foreground: 0 0% 10%;
 
     --card: 0 0% 100%;
@@ -21,26 +21,27 @@
     --secondary: 46 80% 68%;
     --secondary-foreground: 0 0% 10%;
 
-    --muted: 40 20% 90%;
+    --muted: 24 30% 92%;
     --muted-foreground: 0 0% 40%;
 
-    --accent: 325 90% 60%;
+    --accent: 330 92% 71%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 40 20% 85%;
-    --input: 40 20% 85%;
+    --border: 24 20% 88%;
+    --input: 24 20% 88%;
     --ring: 18 97% 67%;
 
     --radius: 0.5rem;
 
-    --coral: 18 97% 67%;
-    --yellow: 46 80% 68%;
-    --pink: 330 100% 64%;
-    --blue: 195 70% 75%;
-    --cream: 40 33% 95%;
+    /* Brand palette from approved colors */
+    --coral: 18 97% 67%;        /* #FC8C5C */
+    --yellow: 46 80% 68%;       /* #F1D46C */
+    --pink: 330 92% 71%;        /* #FBCEEA */
+    --blue: 199 46% 77%;        /* #ABCFDF */
+    --cream: 24 60% 97%;        /* #FBF6F3 */
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -67,21 +68,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Torn paper edge mask for images */
-.torn-edge {
-  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L200,0 L200,185 Q195,190 190,187 Q185,184 180,188 Q175,192 170,189 Q165,186 160,190 Q155,194 150,191 Q145,188 140,192 Q135,196 130,193 Q125,190 120,194 Q115,198 110,195 Q105,192 100,196 Q95,200 90,197 Q85,194 80,198 Q75,195 70,192 Q65,196 60,193 Q55,190 50,194 Q45,198 40,195 Q35,192 30,196 Q25,193 20,190 Q15,194 10,191 Q5,188 0,192 Z' fill='white'/%3E%3C/svg%3E");
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L200,0 L200,185 Q195,190 190,187 Q185,184 180,188 Q175,192 170,189 Q165,186 160,190 Q155,194 150,191 Q145,188 140,192 Q135,196 130,193 Q125,190 120,194 Q115,198 110,195 Q105,192 100,196 Q95,200 90,197 Q85,194 80,198 Q75,195 70,192 Q65,196 60,193 Q55,190 50,194 Q45,198 40,195 Q35,192 30,196 Q25,193 20,190 Q15,194 10,191 Q5,188 0,192 Z' fill='white'/%3E%3C/svg%3E");
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
-}
-
-.torn-edge-top {
-  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' preserveAspectRatio='none'%3E%3Cpath d='M0,15 Q5,12 10,15 Q15,18 20,14 Q25,10 30,13 Q35,16 40,12 Q45,8 50,11 Q55,14 60,10 Q65,6 70,9 Q75,12 80,8 Q85,4 90,7 Q95,10 100,6 Q105,2 110,5 Q115,8 120,4 Q125,0 130,3 Q135,6 140,2 Q145,5 150,8 Q155,4 160,7 Q165,10 170,6 Q175,3 180,7 Q185,11 190,8 Q195,5 200,9 L200,200 L0,200 Z' fill='white'/%3E%3C/svg%3E");
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' preserveAspectRatio='none'%3E%3Cpath d='M0,15 Q5,12 10,15 Q15,18 20,14 Q25,10 30,13 Q35,16 40,12 Q45,8 50,11 Q55,14 60,10 Q65,6 70,9 Q75,12 80,8 Q85,4 90,7 Q95,10 100,6 Q105,2 110,5 Q115,8 120,4 Q125,0 130,3 Q135,6 140,2 Q145,5 150,8 Q155,4 160,7 Q165,10 170,6 Q175,3 180,7 Q185,11 190,8 Q195,5 200,9 L200,200 L0,200 Z' fill='white'/%3E%3C/svg%3E");
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
-}
-
+/* Torn paper edge masks */
 .torn-edge-all {
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' preserveAspectRatio='none'%3E%3Cpath d='M3,8 Q8,3 13,7 Q18,11 23,6 Q28,2 33,6 Q38,10 43,5 Q48,1 53,5 Q58,9 63,4 Q68,0 73,4 Q78,8 83,3 Q88,0 93,4 Q98,8 103,3 Q108,0 113,4 Q118,8 123,3 Q128,0 133,4 Q138,8 143,3 Q148,0 153,4 Q158,8 163,3 Q168,0 173,4 Q178,8 183,3 Q188,0 193,4 Q198,8 200,6 L200,190 Q195,194 190,191 Q185,188 180,192 Q175,196 170,193 Q165,190 160,194 Q155,198 150,195 Q145,192 140,196 Q135,200 130,197 Q125,194 120,198 Q115,195 110,192 Q105,196 100,200 Q95,197 90,194 Q85,198 80,195 Q75,192 70,196 Q65,200 60,197 Q55,194 50,198 Q45,195 40,192 Q35,196 30,200 Q25,197 20,194 Q15,198 10,195 Q5,192 0,196 Z' fill='white'/%3E%3C/svg%3E");
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' preserveAspectRatio='none'%3E%3Cpath d='M3,8 Q8,3 13,7 Q18,11 23,6 Q28,2 33,6 Q38,10 43,5 Q48,1 53,5 Q58,9 63,4 Q68,0 73,4 Q78,8 83,3 Q88,0 93,4 Q98,8 103,3 Q108,0 113,4 Q118,8 123,3 Q128,0 133,4 Q138,8 143,3 Q148,0 153,4 Q158,8 163,3 Q168,0 173,4 Q178,8 183,3 Q188,0 193,4 Q198,8 200,6 L200,190 Q195,194 190,191 Q185,188 180,192 Q175,196 170,193 Q165,190 160,194 Q155,198 150,195 Q145,192 140,196 Q135,200 130,197 Q125,194 120,198 Q115,195 110,192 Q105,196 100,200 Q95,197 90,194 Q85,198 80,195 Q75,192 70,196 Q65,200 60,197 Q55,194 50,198 Q45,195 40,192 Q35,196 30,200 Q25,197 20,194 Q15,198 10,195 Q5,192 0,196 Z' fill='white'/%3E%3C/svg%3E");
