@@ -4,6 +4,7 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 
 import surfCampLogo from '@/assets/surf-camp-logo.png';
+import surferIcon from '@/assets/surfer-icon.png';
 import heroDrone from '@/assets/hero-drone.jpg';
 import surfLesson1 from '@/assets/surf-lesson-1.jpg';
 import surfLesson2 from '@/assets/surf-lesson-2.png';
@@ -60,21 +61,7 @@ export default function Index() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Surfer icon */}
           <div className="mb-8">
-            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" className="text-foreground">
-              {/* Surfer on wave */}
-              <path d="M25,58 Q35,48 45,55 Q55,62 65,52 Q72,45 78,50" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" />
-              <path d="M2,65 Q15,55 30,62 Q45,69 60,59 Q70,52 80,58" stroke="currentColor" strokeWidth="1.5" fill="none" opacity="0.5" />
-              {/* Surfboard */}
-              <line x1="38" y1="20" x2="50" y2="52" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-              {/* Person */}
-              <circle cx="40" cy="16" r="5" stroke="currentColor" strokeWidth="1.5" fill="none" />
-              {/* Arms */}
-              <path d="M35,24 Q30,30 26,28" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-              <path d="M45,24 Q50,28 54,26" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-              {/* Legs */}
-              <path d="M42,42 Q46,48 50,50" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-              <path d="M44,40 Q40,48 38,52" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-            </svg>
+            <img src={surferIcon} alt="Surfer icon" className="w-20 h-20" />
           </div>
           <h2 className="font-display text-4xl md:text-5xl text-foreground uppercase tracking-wider mb-6">
             Discover Lombok's Surf Paradise
