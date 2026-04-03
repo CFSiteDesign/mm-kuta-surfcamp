@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, MapPin, Check, ArrowDown, ArrowUp, Instagram, Facebook, Youtube } from 'lucide-react';
+import { MapPin, Check, ArrowDown, ArrowUp } from 'lucide-react';
+import SiteHeader from '@/components/SiteHeader';
+import SiteFooter from '@/components/SiteFooter';
 
 import logo from '@/assets/logo.png';
 import heroDrone from '@/assets/hero-drone.jpg';
