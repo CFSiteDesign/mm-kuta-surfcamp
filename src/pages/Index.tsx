@@ -148,24 +148,14 @@ export default function Index() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
             <WhatToDoCard
-              image={surfAction}
+              image={surfLesson1}
               title="Surf Sessions"
               description="From mellow beach breaks perfect for your first pop-up to gnarly reef breaks that'll have you buzzing — our local guides know every secret spot. Daily lessons, board included, stoke guaranteed."
             />
             <WhatToDoCard
-              image={snorkelingGili}
-              title="Island Exploring"
-              description="Snorkel the secret Gilis, chase waterfalls through the jungle, or cruise to Pink Beach on a boat day. Lombok is absolutely packed with adventures and we'll hook you up with the best ones."
-            />
-            <WhatToDoCard
-              image={waterfallTour}
-              title="Local Culture & Eats"
-              description="Get amongst it — visit local Sasak villages, cook up traditional feasts with local families, and eat your way through the best warungs in town. This is real Indonesia, not the tourist trap version."
-            />
-            <WhatToDoCard
-              image={poolParty}
-              title="Party & Chill"
-              description="Friday pool parties, happy hour every night, sunset beers on the rooftop. Meet legends from every corner of the planet. Some of your best mates are people you haven't met yet."
+              image={surfLesson3}
+              title="Beach Life"
+              description="White sand beaches, crystal-clear water, and the kind of sunsets that make you forget your phone exists. Kuta Lombok is your playground between sessions."
             />
           </div>
         </div>
