@@ -13,7 +13,16 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["Poppins", "sans-serif"],
+        display: ["Bebas Neue", "sans-serif"],
+      },
       colors: {
+        coral: "hsl(var(--coral))",
+        yellow: "hsl(var(--yellow))",
+        pink: "hsl(var(--pink))",
+        blue: "hsl(var(--blue))",
+        cream: "hsl(var(--cream))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
