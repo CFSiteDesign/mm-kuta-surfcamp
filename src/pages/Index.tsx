@@ -146,6 +146,9 @@ export default function Index() {
           <p className="text-muted-foreground text-lg mb-12 max-w-2xl">
             Here's what you'll get up to between catching waves and making memories.
           </p>
+          <div className="torn-edge-all overflow-hidden mb-16">
+            <img src={surfLesson4} alt="Surfing waves in Kuta Lombok" className="w-full h-[400px] md:h-[600px] object-cover" loading="lazy" />
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
             <WhatToDoCard
               image={surfLesson1}
