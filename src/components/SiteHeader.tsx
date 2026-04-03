@@ -83,7 +83,7 @@ export default function SiteHeader() {
           <div className="flex items-center justify-between h-16 md:h-[72px]">
             {/* Logo */}
             <a href={MM_BASE} className="shrink-0">
-              <img src={logo} alt="Mad Monkey Surf Camp" className="h-12 md:h-14 w-auto object-contain" />
+              <img src={logo} alt="Mad Monkey Surf Camp" className="h-8 md:h-10 w-auto object-contain" />
             </a>
 
             {/* Desktop Nav */}
