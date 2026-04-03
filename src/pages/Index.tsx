@@ -297,6 +297,18 @@ export default function Index() {
   );
 }
 
+function ScheduleCard({ day, subtitle, details }: { day: string; subtitle: string; details: string }) {
+  return (
+    <div className="bg-card rounded-2xl p-6 shadow-md border border-border">
+      <div className="flex items-baseline gap-3 mb-2">
+        <h3 className="font-display text-xl md:text-2xl text-coral uppercase tracking-wider">{day}</h3>
+        <span className="text-sm font-bold text-muted-foreground">— {subtitle}</span>
+      </div>
+      <p className="text-sm md:text-base text-foreground/70 leading-relaxed">{details}</p>
+    </div>
+  );
+}
+
 /* ===================== SUB-COMPONENTS ===================== */
 
 function WhatToDoCard({ image, title, description }: { image: string; title: string; description: string }) {
