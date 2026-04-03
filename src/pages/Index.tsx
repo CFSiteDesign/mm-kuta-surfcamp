@@ -97,7 +97,7 @@ export default function Index() {
           </div>
           <div className="w-full md:w-1/2">
             <div className="torn-edge-all overflow-hidden">
-              <img src={hostelVibes} alt="Mad Monkey surf camp vibes" className="w-full h-[350px] md:h-[450px] object-cover" loading="lazy" />
+              <img src={surfLesson2} alt="Mad Monkey surf camp vibes" className="w-full h-[350px] md:h-[450px] object-cover" loading="lazy" />
             </div>
           </div>
         </div>
