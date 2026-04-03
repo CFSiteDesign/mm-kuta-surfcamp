@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { ChevronDown, Search, User, MessageSquare, Home } from 'lucide-react';
-import logo from '@/assets/menu-logo.png';
+import logo from '@/assets/menu-bar-logo.png';
 
 const MM_BASE = 'https://madmonkeyhostels.com';
 
