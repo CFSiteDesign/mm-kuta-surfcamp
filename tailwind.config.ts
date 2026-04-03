@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         sans: ["Poppins", "sans-serif"],
         display: ["Luckiest Guy", "cursive"],
+        hero: ["Bangers", "cursive"],
       },
       colors: {
         coral: "hsl(var(--coral))",
