@@ -199,27 +199,6 @@ export default function SiteHeader() {
         )}
       </nav>
 
-      {/* Mobile bottom nav bar */}
-      <div className="fixed bottom-0 left-0 w-full bg-foreground z-50 lg:hidden border-t border-primary-foreground/10">
-        <div className="flex items-center justify-around py-2">
-          <a href="#home" className="flex flex-col items-center gap-0.5 text-primary-foreground/70 hover:text-coral transition-colors">
-            <Home size={20} />
-            <span className="text-[10px] font-medium">Home</span>
-          </a>
-          <a href={`${MM_BASE}/search`} className="flex flex-col items-center gap-0.5 text-primary-foreground/70 hover:text-coral transition-colors">
-            <Search size={20} />
-            <span className="text-[10px] font-medium">Search</span>
-          </a>
-          <a href={`${MM_BASE}/login`} className="flex flex-col items-center gap-0.5 text-primary-foreground/70 hover:text-coral transition-colors">
-            <User size={20} />
-            <span className="text-[10px] font-medium">Login</span>
-          </a>
-          <a href={`${MM_BASE}/contact`} className="flex flex-col items-center gap-0.5 text-primary-foreground/70 hover:text-coral transition-colors">
-            <MessageSquare size={20} />
-            <span className="text-[10px] font-medium">Live Chat</span>
-          </a>
-        </div>
-      </div>
     </>
   );
 }
