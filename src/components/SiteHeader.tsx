@@ -82,11 +82,8 @@ export default function SiteHeader() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-[72px]">
             {/* Logo */}
-            <a href={MM_BASE} className="flex items-center gap-2 shrink-0">
-              <img src={logo} alt="Mad Monkey" className="w-10 h-10 object-contain" />
-              <span className={`font-display text-lg md:text-xl tracking-wider transition-colors duration-300 ${textColor} hidden sm:inline`}>
-                MAD MONKEY
-              </span>
+            <a href={MM_BASE} className="shrink-0">
+              <img src={logo} alt="Mad Monkey" className="w-12 h-12 object-contain" />
             </a>
 
             {/* Desktop Nav */}
