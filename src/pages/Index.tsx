@@ -89,12 +89,17 @@ export default function Index() {
               Your Surf Basecamp in Kuta
             </h2>
             <p className="text-base md:text-lg text-foreground/80 leading-relaxed mb-6">
-              Welcome to the Mad Monkey Surf Camp — the dopest spot to level up your surfing while living your best backpacker life. We're just a stone's throw from Kuta Beach, surrounded by world-class breaks and insane scenery. Ride waves all morning, smash a Nasi Goreng for lunch, and spend your arvo chilling by the pool or exploring waterfalls. When the sun goes down, it's happy hour, live music, and stories with your new best mates. This isn't just a surf trip — it's a whole vibe.
+              Ready to level up your island life? Join our epic Surf Camp, kicking off every Monday at 9AM, where salty hair, new mates, and unforgettable sessions are all part of the plan. Whether you're a total beginner or chasing cleaner lines, this week is all about surfing, social vibes, and living your best backpacker life.
             </p>
-            <div className="flex flex-wrap gap-3">
-              <span className="bg-yellow px-4 py-2 rounded-full text-sm font-bold shadow-sm">🏄 All Levels</span>
-              <span className="bg-pink px-4 py-2 rounded-full text-sm font-bold shadow-sm">🌊 Beach & Reef Breaks</span>
-              <span className="bg-blue px-4 py-2 rounded-full text-sm font-bold shadow-sm">📍 Kuta, Lombok</span>
+            <div className="flex flex-wrap gap-3 mb-6">
+              <span className="bg-yellow px-4 py-2 rounded-full text-sm font-bold shadow-sm">🏄 All Levels Welcome</span>
+              <span className="bg-pink px-4 py-2 rounded-full text-sm font-bold shadow-sm">📅 Every Monday 9AM</span>
+              <span className="bg-blue px-4 py-2 rounded-full text-sm font-bold shadow-sm">⏱️ 7 Days</span>
+              <span className="bg-coral/20 px-4 py-2 rounded-full text-sm font-bold shadow-sm">👥 Max 16 Guests</span>
+            </div>
+            <div className="bg-card rounded-xl p-5 shadow-sm border border-border">
+              <p className="font-display text-2xl text-coral uppercase tracking-wider mb-1">$880 USD</p>
+              <p className="text-sm text-muted-foreground">15,000,000 IDR per person</p>
             </div>
           </div>
           <div className="w-full md:w-1/2">
@@ -105,8 +110,42 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ===================== THE GOOD STUFF ===================== */}
+      {/* ===================== WEEKLY SCHEDULE ===================== */}
       <section className="bg-pink/30 py-16 md:py-24">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-display text-4xl md:text-5xl text-foreground uppercase tracking-wider mb-4">
+            Your Week, Sorted
+          </h2>
+          <p className="text-muted-foreground text-lg mb-12 max-w-2xl">
+            Seven days of waves, vibes, and unforgettable moments. Here's how it goes down.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <ScheduleCard
+              day="Monday"
+              subtitle="Welcome Day"
+              details="Welcome session with the crew and your surf instructors. Practice pop-ups on the beach, smash lunch together, grab your welcome pack with merch, then head back to the hostel for family dinner and the first night's event. Let's gooo. 🤙"
+            />
+            <ScheduleCard
+              day="Tuesday – Friday"
+              subtitle="Surf. Eat. Repeat."
+              details="Brekkie first, then hit the waves around 9-10AM — different beaches each day depending on conditions. Back for lunch and video analysis with your instructors (watch yourself eat it in slo-mo). Afternoon surf sesh, then nightly events. Rinse and repeat."
+            />
+            <ScheduleCard
+              day="Saturday"
+              subtitle="Boat Party Day 🎉"
+              details="Morning surf as usual, then ALL camp members pile onto the boat party with exclusive drink deals. Nurse the hangover, explore some non-surf beaches, then normal service resumes for the arvo surf session and night events."
+            />
+            <ScheduleCard
+              day="Sunday"
+              subtitle="Chill & Farewell"
+              details="Sleep in, explore the non-surf beaches, or just vibe by the pool. Afternoon surf session to wrap things up, then finish the week strong with a pub quiz. Legends only. 🏆"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== THE GOOD STUFF ===================== */}
+      <section className="bg-cream py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-display text-4xl md:text-5xl text-foreground uppercase tracking-wider mb-4">
             The Good Stuff
@@ -139,10 +178,10 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ===================== SURF CAMP PACKAGES ===================== */}
+      {/* ===================== WHAT'S INCLUDED ===================== */}
       <section id="surfcamp" className="relative overflow-hidden">
         {/* Top torn edge */}
-        <div className="bg-pink/30">
+        <div className="bg-cream">
           <svg viewBox="0 0 1440 60" preserveAspectRatio="none" className="w-full block h-[40px] md:h-[60px]">
             <path d="M0,30 Q30,0 60,30 Q90,60 120,30 Q150,0 180,30 Q210,60 240,30 Q270,0 300,30 Q330,60 360,30 Q390,0 420,30 Q450,60 480,30 Q510,0 540,30 Q570,60 600,30 Q630,0 660,30 Q690,60 720,30 Q750,0 780,30 Q810,60 840,30 Q870,0 900,30 Q930,60 960,30 Q990,0 1020,30 Q1050,60 1080,30 Q1110,0 1140,30 Q1170,60 1200,30 Q1230,0 1260,30 Q1290,60 1320,30 Q1350,0 1380,30 Q1410,60 1440,30 L1440,60 L0,60 Z" fill="hsl(199,46%,77%)" />
           </svg>
@@ -151,18 +190,44 @@ export default function Index() {
         <div className="bg-blue py-16 md:py-24">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="font-display text-4xl md:text-6xl text-coral text-stroke-sm uppercase tracking-wider mb-4">
-              Pick Your Adventure
+              What's Included
             </h2>
             <p className="text-foreground/70 text-lg mb-12 max-w-2xl">
-              Whether you've got a week or a whole month, we've got a surf package that'll blow your mind.
+              Everything you need for the ultimate surf week — no hidden costs, no stress.
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-              <ProductCard image={surfLesson1} title="Surf & Stay" price="From US$210" description="Bed + daily surf — simple as." />
-              <ProductCard image={surfLesson2} title="7 Day Surf Camp" price="US$694" description="The full send. A week of waves, tours & good times." />
-              <ProductCard image={surfLesson3} title="1 Month Surf Academy" price="US$80/day" description="Go from kook to competent in 30 days." />
-              <ProductCard image={surfAction} title="2 Month Academy" price="US$79/day" description="Serious progression for committed surfers." />
-              <ProductCard image={beachSunset} title="3 Month Instructor Course" price="US$70/day" description="Walk away with a surf instructor certification." />
-              <ProductCard image={pinkBeach} title="15 Day Island Hopper" price="US$1,399" description="Bali + Lombok + Gili. The ultimate Indo trip." />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Inclusions */}
+              <div className="bg-card/80 backdrop-blur rounded-2xl p-8 shadow-md">
+                <h3 className="font-display text-2xl text-foreground uppercase tracking-wider mb-4">✅ Included</h3>
+                <ul className="space-y-3 text-foreground/80">
+                  <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Transport to and from surf spots</li>
+                  <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Meals (breakfast & lunch daily)</li>
+                  <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Surf board rental for the week</li>
+                  <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Rash vest provided</li>
+                  <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Professional surf instructors</li>
+                  <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Video analysis sessions</li>
+                  <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Welcome pack with merch</li>
+                  <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Saturday boat party access</li>
+                </ul>
+              </div>
+              {/* Need to know */}
+              <div className="space-y-6">
+                <div className="bg-card/80 backdrop-blur rounded-2xl p-8 shadow-md">
+                  <h3 className="font-display text-2xl text-foreground uppercase tracking-wider mb-4">❌ Not Included</h3>
+                  <ul className="space-y-3 text-foreground/80">
+                    <li className="flex items-start gap-3"><span className="text-muted-foreground font-bold text-lg">•</span>Evening meals</li>
+                    <li className="flex items-start gap-3"><span className="text-muted-foreground font-bold text-lg">•</span>Other personal expenses & gratuity</li>
+                  </ul>
+                </div>
+                <div className="bg-card/80 backdrop-blur rounded-2xl p-8 shadow-md">
+                  <h3 className="font-display text-2xl text-foreground uppercase tracking-wider mb-4">🎒 What to Bring</h3>
+                  <p className="text-foreground/80">Surfing attire, swimming gear, towels, cash/cards, sunscreen, and good vibes only.</p>
+                </div>
+                <div className="bg-yellow/40 rounded-2xl p-6 shadow-sm">
+                  <h3 className="font-display text-lg text-foreground uppercase tracking-wider mb-2">📋 Cancellation Policy</h3>
+                  <p className="text-foreground/80 text-sm">Non-refundable within one week of start date. Fully refundable 7+ days before if cancelled by you or Mad Monkey.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
