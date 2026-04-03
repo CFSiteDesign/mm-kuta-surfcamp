@@ -9,6 +9,7 @@ import heroDrone from '@/assets/hero-drone.jpg';
 import surfLesson1 from '@/assets/surf-lesson-1.jpg';
 import surfLesson2 from '@/assets/surf-lesson-2.png';
 import surfLesson3 from '@/assets/surf-lesson-3.png';
+import surfLesson4 from '@/assets/surf-lesson-4.jpg';
 
 export default function Index() {
   const [showScrollTop, setShowScrollTop] = useState(false);
