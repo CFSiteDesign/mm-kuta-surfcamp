@@ -15,7 +15,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Poppins", "sans-serif"],
-        display: ["Bebas Neue", "sans-serif"],
+        display: ["Luckiest Guy", "cursive"],
       },
       colors: {
         coral: "hsl(var(--coral))",
