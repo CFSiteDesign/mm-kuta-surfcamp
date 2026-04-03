@@ -36,7 +36,7 @@ export default function Index() {
         <img src={heroDrone} alt="Kuta Lombok aerial view" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-foreground/40 via-foreground/20 to-foreground/60 z-[1]" />
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <img src={logo} alt="Mad Monkey Surf Camp Logo" className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 drop-shadow-2xl" />
+          
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-primary-foreground mb-4 tracking-wider drop-shadow-lg">
             MAD MONKEY KUTA LOMBOK
           </h1>
