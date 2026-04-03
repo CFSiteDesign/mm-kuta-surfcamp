@@ -30,7 +30,7 @@ export default function Index() {
         <img src={heroDrone} alt="Kuta Lombok Surf Camp" className="absolute inset-0 w-full h-full object-cover scale-125 object-center" />
         <div className="absolute inset-0 bg-foreground/30 z-[1]" />
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <img src={surfCampLogo} alt="Mad Monkey Surf Camp Kuta Lombok" className="w-72 md:w-[28rem] mx-auto mb-8 drop-shadow-2xl brightness-0 invert" />
+          <img src={surfCampLogo} alt="Mad Monkey Surf Camp Kuta Lombok" className="w-72 md:w-[28rem] mx-auto mb-8 drop-shadow-2xl" />
           <h1 className="font-hero text-5xl md:text-7xl lg:text-8xl text-primary-foreground tracking-widest drop-shadow-lg uppercase leading-tight">
             Surf. Stay. Send It.
           </h1>
