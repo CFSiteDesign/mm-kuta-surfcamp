@@ -17,31 +17,19 @@ import hostelVibes from '@/assets/hostel-vibes.jpg';
 import beachSunset from '@/assets/beach-sunset.jpg';
 
 export default function Index() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-      setShowScrollTop(window.scrollY > 500);
-    };
+    const handleScroll = () => setShowScrollTop(window.scrollY > 500);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
-  const navLinks = [
-    { href: '#home', label: 'Home' },
-    { href: '#tours', label: 'Tours & Activities' },
-    { href: '#surfcamp', label: 'Surf Camp' },
-    { href: '#gallery', label: 'Gallery' },
-    { href: '#contact', label: 'Contact' },
-  ];
-
   return (
     <div className="font-sans text-foreground bg-cream min-h-screen">
+      <SiteHeader />
       {/* Navigation */}
       <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-cream shadow-lg py-2' : 'bg-transparent py-4'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
