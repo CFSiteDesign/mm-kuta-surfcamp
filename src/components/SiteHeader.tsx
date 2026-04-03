@@ -91,12 +91,6 @@ export default function SiteHeader() {
 
             {/* Desktop Nav */}
             <div className="hidden lg:flex items-center gap-1">
-              <a
-                href={`${MM_BASE}/ha-giang-loop/`}
-                className="px-3 py-1.5 rounded-full border border-coral text-coral text-sm font-semibold hover:bg-coral hover:text-primary-foreground transition-colors"
-              >
-                Ha Giang Loop
-              </a>
               <a href={`${MM_BASE}/our-story`} className={`px-3 py-2 text-sm font-semibold ${textColor} ${hoverColor} transition-colors`}>
                 Our Story
               </a>
