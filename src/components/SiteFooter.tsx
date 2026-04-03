@@ -1,5 +1,5 @@
 import { Instagram, Facebook, Youtube } from 'lucide-react';
-import logo from '@/assets/surf-camp-logo.png';
+import logo from '@/assets/footer-logo.png';
 
 const MM_BASE = 'https://madmonkeyhostels.com';
 
@@ -63,7 +63,7 @@ export default function SiteFooter() {
           {/* Logo & socials */}
           <div className="flex flex-col items-center md:items-start">
             <div className="flex items-center gap-3 mb-4">
-              <img src={logo} alt="Mad Monkey Surf Camp" className="w-20 h-20 object-contain brightness-0 invert" />
+              <img src={logo} alt="Mad Monkey" className="h-16 w-auto object-contain brightness-0 invert" />
             </div>
             <div className="flex gap-4 mt-2">
               {socialLinks.map(social => (
