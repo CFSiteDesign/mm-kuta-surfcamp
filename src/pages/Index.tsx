@@ -32,11 +32,11 @@ export default function Index() {
 
       {/* ===================== HERO ===================== */}
       <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
-        <img src={heroDrone} alt="Kuta Lombok aerial view" className="absolute inset-0 w-full h-full object-cover" />
+        <img src={heroDrone} alt="Kuta Lombok Surf Camp" className="absolute inset-0 w-full h-full object-cover scale-125 object-center" />
         <div className="absolute inset-0 bg-foreground/30 z-[1]" />
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-yellow text-stroke tracking-wider drop-shadow-lg uppercase">
-            Mad Monkey Surf Camp Lombok
+            Kuta Lombok Surf Camp
           </h1>
           <div className="mt-10">
             <a href="#surfcamp" className="inline-block bg-pink text-primary-foreground px-10 py-4 font-display text-2xl uppercase tracking-wider hover:brightness-110 transition-all shadow-lg">
