@@ -96,7 +96,7 @@ export default function Index() {
               </svg>
             </div>
             <div className="torn-edge-all overflow-hidden">
-              <img src={hostelVibes} alt="Mad Monkey Kuta Lombok Resort" className="w-full h-[400px] md:h-[600px] object-cover" loading="lazy" />
+              <img src={surfLesson1} alt="Surf camp in Kuta Lombok" className="w-full h-[400px] md:h-[600px] object-cover" loading="lazy" />
             </div>
           </div>
         </div>
