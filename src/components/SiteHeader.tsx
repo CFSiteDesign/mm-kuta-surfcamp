@@ -170,9 +170,6 @@ export default function SiteHeader() {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="lg:hidden bg-cream shadow-lg py-6 px-6 flex flex-col gap-3 animate-fade-in max-h-[80vh] overflow-y-auto">
-            <a href={`${MM_BASE}/ha-giang-loop/`} className="inline-block self-start px-4 py-1.5 rounded-full border border-coral text-coral text-sm font-semibold">
-              Ha Giang Loop
-            </a>
             <a href={`${MM_BASE}/our-story`} className="font-semibold text-lg">Our Story</a>
             <details className="group">
               <summary className="font-semibold text-lg cursor-pointer list-none flex items-center justify-between">
