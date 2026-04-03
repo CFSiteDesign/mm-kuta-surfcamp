@@ -4,6 +4,7 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 
 import surfCampLogo from '@/assets/surf-camp-logo.png';
+import surferIcon from '@/assets/surfer-icon.png';
 import heroDrone from '@/assets/hero-drone.jpg';
 import surfLesson1 from '@/assets/surf-lesson-1.jpg';
 import surfLesson2 from '@/assets/surf-lesson-2.png';
