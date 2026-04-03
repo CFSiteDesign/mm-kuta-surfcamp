@@ -9,13 +9,6 @@ import heroDrone from '@/assets/hero-drone.jpg';
 import surfLesson1 from '@/assets/surf-lesson-1.jpg';
 import surfLesson2 from '@/assets/surf-lesson-2.png';
 import surfLesson3 from '@/assets/surf-lesson-3.png';
-import surfAction from '@/assets/surf-action.jpg';
-import snorkelingGili from '@/assets/snorkeling-gili.jpg';
-import waterfallTour from '@/assets/waterfall-tour.jpg';
-import poolParty from '@/assets/pool-party.jpg';
-import pinkBeach from '@/assets/pink-beach.jpg';
-import hostelVibes from '@/assets/hostel-vibes.jpg';
-import beachSunset from '@/assets/beach-sunset.jpg';
 
 export default function Index() {
   const [showScrollTop, setShowScrollTop] = useState(false);
