@@ -62,7 +62,7 @@ Deno.serve(async (req) => {
         "X-Connection-Api-Key": RESEND_API_KEY,
       },
       body: JSON.stringify({
-        from: "Mad Monkey Kuta Lombok <onboarding@resend.dev>",
+        from: "Mad Monkey Kuta Lombok <surf@verify.theorox.com>",
         to: [NOTIFY_TO],
         reply_to: email,
         subject: `New Surf Camp enquiry from ${name}`,
