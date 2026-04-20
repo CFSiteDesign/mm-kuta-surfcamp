@@ -82,7 +82,7 @@ export default function Index() {
             <img
               src={priceSticker}
               alt="$880 USD per person"
-              className="absolute top-4 right-4 md:top-8 md:right-8 w-32 md:w-48 h-auto rotate-12 drop-shadow-xl pointer-events-none"
+              className="absolute top-4 left-4 md:top-8 md:left-8 w-32 md:w-48 h-auto -rotate-12 drop-shadow-xl pointer-events-none"
               loading="lazy"
             />
           </div>
