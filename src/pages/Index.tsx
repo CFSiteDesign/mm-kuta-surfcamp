@@ -10,6 +10,9 @@ import surfLesson1 from '@/assets/surf-lesson-1.jpg';
 import surfLesson2 from '@/assets/surf-lesson-2.png';
 import surfLesson3 from '@/assets/surf-lesson-3.png';
 import surfLesson4 from '@/assets/surf-lesson-4.jpg';
+import priceSticker from '@/assets/price-sticker.png';
+
+const BOOK_NOW_URL = 'https://madmonkeyhostels.com/tours-events/surf-camp';
 
 export default function Index() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -38,9 +41,14 @@ export default function Index() {
           <p className="text-lg md:text-xl text-primary-foreground/90 mt-4 mb-10 font-medium max-w-xl mx-auto">
             Your ultimate surf camp in Kuta Lombok — waves, mates, and zero regrets.
           </p>
-          <a href="#surfcamp" className="inline-block bg-coral text-primary-foreground px-10 py-4 font-display text-2xl uppercase tracking-wider hover:brightness-110 transition-all shadow-lg rounded-full">
-            Explore Trips
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="#contact" className="inline-block bg-card text-foreground px-8 py-4 font-display text-xl md:text-2xl uppercase tracking-wider hover:brightness-95 transition-all shadow-lg rounded-full">
+              Ask Us Anything
+            </a>
+            <a href={BOOK_NOW_URL} target="_blank" rel="noopener noreferrer" className="inline-block bg-coral text-primary-foreground px-8 py-4 font-display text-xl md:text-2xl uppercase tracking-wider hover:brightness-110 transition-all shadow-lg rounded-full">
+              Book Now
+            </a>
+          </div>
         </div>
         {/* Torn paper wave bottom */}
         <div className="absolute bottom-0 left-0 w-full z-10">
@@ -97,8 +105,14 @@ export default function Index() {
             </div>
           </div>
           <div className="w-full md:w-1/2">
-            <div className="torn-edge-all overflow-hidden">
+            <div className="torn-edge-all overflow-hidden relative">
               <img src={surfLesson2} alt="Mad Monkey surf camp vibes" className="w-full h-[350px] md:h-[450px] object-cover" loading="lazy" />
+              <img
+                src={priceSticker}
+                alt="$880 USD per person"
+                className="absolute top-3 right-3 md:top-5 md:right-5 w-28 md:w-40 h-auto rotate-12 drop-shadow-xl pointer-events-none"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
@@ -134,6 +148,11 @@ export default function Index() {
               subtitle="Chill & Farewell"
               details="Sleep in, explore the non-surf beaches, or just vibe by the pool. Afternoon surf session to wrap things up, then finish the week strong with a pub quiz. Legends only. 🏆"
             />
+          </div>
+          <div className="mt-12 text-center">
+            <a href={BOOK_NOW_URL} target="_blank" rel="noopener noreferrer" className="inline-block bg-coral text-primary-foreground px-10 py-4 font-display text-2xl uppercase tracking-wider hover:brightness-110 transition-all shadow-lg rounded-full">
+              Book Now
+            </a>
           </div>
         </div>
       </section>
@@ -184,6 +203,7 @@ export default function Index() {
               <div className="bg-card/80 backdrop-blur rounded-2xl p-8 shadow-md">
                 <h3 className="font-display text-2xl text-foreground uppercase tracking-wider mb-4">✅ Included</h3>
                 <ul className="space-y-3 text-foreground/80">
+                  <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>All accommodation, including a free night the day before the tour starts</li>
                   <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Transport to and from surf spots</li>
                   <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Meals (breakfast & lunch daily)</li>
                   <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Surf board rental for the week</li>
@@ -197,19 +217,17 @@ export default function Index() {
               {/* Need to know */}
               <div className="space-y-6">
                 <div className="bg-card/80 backdrop-blur rounded-2xl p-8 shadow-md">
-                  <h3 className="font-display text-2xl text-foreground uppercase tracking-wider mb-4">❌ Not Included</h3>
-                  <ul className="space-y-3 text-foreground/80">
-                    <li className="flex items-start gap-3"><span className="text-muted-foreground font-bold text-lg">•</span>Evening meals</li>
-                    <li className="flex items-start gap-3"><span className="text-muted-foreground font-bold text-lg">•</span>Other personal expenses & gratuity</li>
-                  </ul>
-                </div>
-                <div className="bg-card/80 backdrop-blur rounded-2xl p-8 shadow-md">
                   <h3 className="font-display text-2xl text-foreground uppercase tracking-wider mb-4">🎒 What to Bring</h3>
                   <p className="text-foreground/80">Surfing attire, swimming gear, towels, cash/cards, sunscreen, and good vibes only.</p>
                 </div>
                 <div className="bg-yellow/40 rounded-2xl p-6 shadow-sm">
                   <h3 className="font-display text-lg text-foreground uppercase tracking-wider mb-2">📋 Cancellation Policy</h3>
                   <p className="text-foreground/80 text-sm">Non-refundable within one week of start date. Fully refundable 7+ days before if cancelled by you or Mad Monkey.</p>
+                </div>
+                <div className="text-center md:text-left">
+                  <a href={BOOK_NOW_URL} target="_blank" rel="noopener noreferrer" className="inline-block bg-coral text-primary-foreground px-10 py-4 font-display text-2xl uppercase tracking-wider hover:brightness-110 transition-all shadow-lg rounded-full">
+                    Book Now
+                  </a>
                 </div>
               </div>
             </div>
@@ -225,7 +243,7 @@ export default function Index() {
       </section>
 
       {/* ===================== ENQUIRY FORM ===================== */}
-      <section className="bg-cream py-16 md:py-24">
+      <section id="contact" className="bg-cream py-16 md:py-24">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-display text-4xl md:text-5xl text-coral uppercase tracking-wider mb-4">
             Hit Us Up
@@ -238,27 +256,19 @@ export default function Index() {
               <label className="block font-bold text-sm mb-2">Name <span className="text-coral">*</span></label>
               <input type="text" className="w-full border border-border bg-card px-4 py-3 text-sm rounded-lg focus:outline-none focus:border-coral transition-colors" />
             </div>
-            <div>
-              <label className="block font-bold text-sm mb-2">Email <span className="text-coral">*</span></label>
-              <input type="email" className="w-full border border-border bg-card px-4 py-3 text-sm rounded-lg focus:outline-none focus:border-coral transition-colors" />
-            </div>
-            <div>
-              <label className="block font-bold text-sm mb-2">Phone <span className="text-coral">*</span></label>
-              <input type="tel" className="w-full border border-border bg-card px-4 py-3 text-sm rounded-lg focus:outline-none focus:border-coral transition-colors" />
-            </div>
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
-                <label className="block font-bold text-sm mb-2">Start Date</label>
-                <input type="date" className="w-full border border-border bg-card px-4 py-3 text-sm rounded-lg focus:outline-none focus:border-coral transition-colors" />
+                <label className="block font-bold text-sm mb-2">Email <span className="text-coral">*</span></label>
+                <input type="email" required className="w-full border border-border bg-card px-4 py-3 text-sm rounded-lg focus:outline-none focus:border-coral transition-colors" />
               </div>
               <div>
-                <label className="block font-bold text-sm mb-2">End Date</label>
-                <input type="date" className="w-full border border-border bg-card px-4 py-3 text-sm rounded-lg focus:outline-none focus:border-coral transition-colors" />
+                <label className="block font-bold text-sm mb-2">Phone <span className="text-coral">*</span></label>
+                <input type="tel" required className="w-full border border-border bg-card px-4 py-3 text-sm rounded-lg focus:outline-none focus:border-coral transition-colors" />
               </div>
             </div>
             <div>
-              <label className="block font-bold text-sm mb-2">Message (optional)</label>
-              <textarea rows={4} className="w-full border border-border bg-card px-4 py-3 text-sm rounded-lg focus:outline-none focus:border-coral transition-colors resize-none" placeholder="Tell us what you're keen for..." />
+              <label className="block font-bold text-sm mb-2">Message <span className="text-coral">*</span></label>
+              <textarea rows={4} required className="w-full border border-border bg-card px-4 py-3 text-sm rounded-lg focus:outline-none focus:border-coral transition-colors resize-none" placeholder="Tell us what you're keen for..." />
             </div>
             <button type="submit" className="bg-coral text-primary-foreground font-display text-xl uppercase tracking-wider px-8 py-3 rounded-full hover:brightness-110 transition-all shadow-md">
               Send It 🤙
