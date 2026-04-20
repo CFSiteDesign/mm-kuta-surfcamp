@@ -77,8 +77,14 @@ export default function Index() {
       {/* ===================== LARGE FEATURE IMAGE ===================== */}
       <section className="bg-cream pb-8 md:pb-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="torn-edge-all overflow-hidden">
+          <div className="torn-edge-all overflow-hidden relative">
             <img src={surfLesson1} alt="Learning to surf in Kuta Lombok" className="w-full h-[400px] md:h-[600px] object-cover" loading="lazy" />
+            <img
+              src={priceSticker}
+              alt="$880 USD per person"
+              className="absolute top-4 right-4 md:top-8 md:right-8 w-32 md:w-48 h-auto rotate-12 drop-shadow-xl pointer-events-none"
+              loading="lazy"
+            />
           </div>
         </div>
       </section>
@@ -105,14 +111,8 @@ export default function Index() {
             </div>
           </div>
           <div className="w-full md:w-1/2">
-            <div className="torn-edge-all overflow-hidden relative">
+            <div className="torn-edge-all overflow-hidden">
               <img src={surfLesson2} alt="Mad Monkey surf camp vibes" className="w-full h-[350px] md:h-[450px] object-cover" loading="lazy" />
-              <img
-                src={priceSticker}
-                alt="$880 USD per person"
-                className="absolute top-3 right-3 md:top-5 md:right-5 w-28 md:w-40 h-auto rotate-12 drop-shadow-xl pointer-events-none"
-                loading="lazy"
-              />
             </div>
           </div>
         </div>
