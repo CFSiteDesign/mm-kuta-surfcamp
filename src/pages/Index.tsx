@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { ArrowUp } from 'lucide-react';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
+import { supabase } from '@/integrations/supabase/client';
+import { toast } from 'sonner';
 
 import surfCampLogo from '@/assets/surf-camp-logo.png';
 import surferIcon from '@/assets/surfer-icon.png';
@@ -16,6 +18,27 @@ const BOOK_NOW_URL = 'https://madmonkeyhostels.com/tours-events/surf-camp';
 
 export default function Index() {
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (submitting) return;
+    setSubmitting(true);
+    try {
+      const { data, error } = await supabase.functions.invoke('send-contact-notification', {
+        body: form,
+      });
+      if (error || !data?.success) throw new Error(error?.message || 'Failed to send');
+      toast.success("Message sent! We'll be in touch soon. 🤙");
+      setForm({ name: '', email: '', phone: '', message: '' });
+    } catch (err) {
+      console.error(err);
+      toast.error('Something went wrong. Please try again or email us directly.');
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => setShowScrollTop(window.scrollY > 500);
@@ -251,27 +274,56 @@ export default function Index() {
           <p className="text-muted-foreground mb-8">
             Got questions? Want to lock in dates? Flick us a message and we'll sort you out.
           </p>
-          <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+          <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
               <label className="block font-bold text-sm mb-2">Name <span className="text-coral">*</span></label>
-              <input type="text" className="w-full border border-border bg-card px-4 py-3 text-sm rounded-lg focus:outline-none focus:border-coral transition-colors" />
+              <input
+                type="text"
+                required
+                value={form.name}
+                onChange={(e) => setForm({ ...form, name: e.target.value })}
+                className="w-full border border-border bg-card px-4 py-3 text-sm rounded-lg focus:outline-none focus:border-coral transition-colors"
+              />
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
                 <label className="block font-bold text-sm mb-2">Email <span className="text-coral">*</span></label>
-                <input type="email" required className="w-full border border-border bg-card px-4 py-3 text-sm rounded-lg focus:outline-none focus:border-coral transition-colors" />
+                <input
+                  type="email"
+                  required
+                  value={form.email}
+                  onChange={(e) => setForm({ ...form, email: e.target.value })}
+                  className="w-full border border-border bg-card px-4 py-3 text-sm rounded-lg focus:outline-none focus:border-coral transition-colors"
+                />
               </div>
               <div>
                 <label className="block font-bold text-sm mb-2">Phone <span className="text-coral">*</span></label>
-                <input type="tel" required className="w-full border border-border bg-card px-4 py-3 text-sm rounded-lg focus:outline-none focus:border-coral transition-colors" />
+                <input
+                  type="tel"
+                  required
+                  value={form.phone}
+                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                  className="w-full border border-border bg-card px-4 py-3 text-sm rounded-lg focus:outline-none focus:border-coral transition-colors"
+                />
               </div>
             </div>
             <div>
               <label className="block font-bold text-sm mb-2">Message <span className="text-coral">*</span></label>
-              <textarea rows={4} required className="w-full border border-border bg-card px-4 py-3 text-sm rounded-lg focus:outline-none focus:border-coral transition-colors resize-none" placeholder="Tell us what you're keen for..." />
+              <textarea
+                rows={4}
+                required
+                value={form.message}
+                onChange={(e) => setForm({ ...form, message: e.target.value })}
+                placeholder="Tell us what you're keen for..."
+                className="w-full border border-border bg-card px-4 py-3 text-sm rounded-lg focus:outline-none focus:border-coral transition-colors resize-none"
+              />
             </div>
-            <button type="submit" className="bg-coral text-primary-foreground font-display text-xl uppercase tracking-wider px-8 py-3 rounded-full hover:brightness-110 transition-all shadow-md">
-              Send It 🤙
+            <button
+              type="submit"
+              disabled={submitting}
+              className="bg-coral text-primary-foreground font-display text-xl uppercase tracking-wider px-8 py-3 rounded-full hover:brightness-110 transition-all shadow-md disabled:opacity-60 disabled:cursor-not-allowed"
+            >
+              {submitting ? 'Sending…' : 'Send It 🤙'}
             </button>
           </form>
         </div>
