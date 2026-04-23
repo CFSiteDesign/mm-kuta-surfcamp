@@ -12,6 +12,7 @@ import surfLesson1 from '@/assets/surf-lesson-1.jpg';
 import surfLesson2 from '@/assets/surf-lesson-2.png';
 import surfLesson3 from '@/assets/surf-lesson-3.png';
 import surfLesson4 from '@/assets/surf-lesson-4.jpg';
+import priceSticker from '@/assets/price-sticker-clean.png';
 
 const BOOK_NOW_URL = 'https://madmonkeyhostels.com/tours-events/surf-camp';
 
@@ -102,7 +103,7 @@ export default function Index() {
           <div className="torn-edge-all overflow-hidden relative">
             <img src={surfLesson1} alt="Learning to surf in Kuta Lombok" className="w-full h-[400px] md:h-[600px] object-cover" loading="lazy" />
             <div className="absolute top-4 left-4 md:top-8 md:left-8 w-32 md:w-48 aspect-square -rotate-12 drop-shadow-xl pointer-events-none">
-              <div className="absolute inset-0 bg-coral" style={{ clipPath: 'polygon(50% 0%, 58% 17%, 74% 6%, 77% 25%, 96% 20%, 88% 38%, 100% 50%, 88% 62%, 96% 80%, 77% 75%, 74% 94%, 58% 83%, 50% 100%, 42% 83%, 26% 94%, 23% 75%, 4% 80%, 12% 62%, 0% 50%, 12% 38%, 4% 20%, 23% 25%, 26% 6%, 42% 17%)' }} />
+              <img src={priceSticker} alt="$700 USD all inclusive" className="w-full h-auto" loading="lazy" />
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8 md:px-12 -mt-1">
                 <span className="font-display text-xl md:text-3xl text-primary-foreground uppercase leading-none drop-shadow-sm">$700</span>
                 <span className="font-display text-sm md:text-xl text-primary-foreground uppercase leading-none drop-shadow-sm">USD</span>
