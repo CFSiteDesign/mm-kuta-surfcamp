@@ -102,12 +102,11 @@ export default function Index() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="torn-edge-all overflow-hidden relative">
             <img src={surfLesson1} alt="Learning to surf in Kuta Lombok" className="w-full h-[400px] md:h-[600px] object-cover" loading="lazy" />
-            <img
-              src={priceSticker}
-              alt="$880 USD per person"
-              className="absolute top-4 left-4 md:top-8 md:left-8 w-32 md:w-48 h-auto -rotate-12 drop-shadow-xl pointer-events-none"
-              loading="lazy"
-            />
+            <div className="absolute top-4 left-4 md:top-8 md:left-8 w-36 md:w-52 -rotate-12 drop-shadow-xl pointer-events-none bg-yellow text-foreground rounded-full aspect-square flex flex-col items-center justify-center text-center border-4 border-card shadow-lg">
+              <span className="font-display text-2xl md:text-4xl text-coral uppercase leading-none">$700</span>
+              <span className="font-display text-lg md:text-2xl uppercase leading-none">USD</span>
+              <span className="mt-1 text-xs md:text-sm font-bold uppercase tracking-wide">All Inclusive</span>
+            </div>
           </div>
         </div>
       </section>
@@ -128,9 +127,14 @@ export default function Index() {
               <span className="bg-blue px-4 py-2 rounded-full text-sm font-bold shadow-sm">⏱️ 7 Days</span>
               <span className="bg-coral/20 px-4 py-2 rounded-full text-sm font-bold shadow-sm">👥 Max 16 Guests</span>
             </div>
+            <div className="inline-flex flex-col sm:flex-row gap-2 mb-6 bg-yellow text-foreground px-5 py-3 rounded-2xl -rotate-2 shadow-md border border-border font-display text-xl uppercase tracking-wider">
+              <span>All Inclusive Surf</span>
+              <span className="hidden sm:inline">/</span>
+              <span>All Inclusive Stays</span>
+            </div>
             <div className="bg-card rounded-xl p-5 shadow-sm border border-border">
-              <p className="font-display text-2xl text-coral uppercase tracking-wider mb-1">$880 USD</p>
-              <p className="text-sm text-muted-foreground">15,000,000 IDR per person</p>
+              <p className="font-display text-2xl text-coral uppercase tracking-wider mb-1">$700 USD All Inclusive</p>
+              <p className="text-sm text-muted-foreground">12,000,000 IDR per person / all inclusive</p>
             </div>
           </div>
           <div className="w-full md:w-1/2">
@@ -152,24 +156,24 @@ export default function Index() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <ScheduleCard
-              day="Monday"
-              subtitle="Welcome Day"
-              details="Welcome session with the crew and your surf instructors. Practice pop-ups on the beach, smash lunch together, grab your welcome pack with merch, then head back to the hostel for family dinner and the first night's event. Let's gooo. 🤙"
+              day="Sunday"
+              subtitle="Arrival Day"
+              details="Check in, drop your bags, and soak it all in. Tonight's about meeting your fellow surfers, getting settled into the hostel, and kicking off the week right. No agenda — just good vibes and new faces."
             />
             <ScheduleCard
-              day="Tuesday – Friday"
+              day="Monday – Friday"
               subtitle="Surf. Eat. Repeat."
               details="Brekkie first, then hit the waves around 9-10AM — different beaches each day depending on conditions. Back for lunch and video analysis with your instructors (watch yourself eat it in slo-mo). Afternoon surf sesh, then nightly events. Rinse and repeat."
             />
             <ScheduleCard
               day="Saturday"
               subtitle="Boat Party Day 🎉"
-              details="Morning surf as usual, then ALL camp members pile onto the boat party with exclusive drink deals. Nurse the hangover, explore some non-surf beaches, then normal service resumes for the arvo surf session and night events."
+              details="One last morning surf to cap off the week, then ALL camp members pile onto the boat party. The perfect send-off to a week of waves and good times."
             />
             <ScheduleCard
               day="Sunday"
-              subtitle="Chill & Farewell"
-              details="Sleep in, explore the non-surf beaches, or just vibe by the pool. Afternoon surf session to wrap things up, then finish the week strong with a pub quiz. Legends only. 🏆"
+              subtitle="See You Next Time"
+              details="Sleep in, take it easy, and check out when you're ready. Not ready to leave? Extend your stay — no one would blame you. It's been a week to remember."
             />
           </div>
           <div className="mt-12 text-center">
@@ -216,7 +220,7 @@ export default function Index() {
         <div className="bg-blue py-16 md:py-24">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="font-display text-4xl md:text-6xl text-coral text-stroke-sm uppercase tracking-wider mb-4">
-              What's Included
+              Everything Included. Just Show Up & Surf.
             </h2>
             <p className="text-foreground/70 text-lg mb-12 max-w-2xl">
               Everything you need for the ultimate surf week — no hidden costs, no stress.
@@ -229,6 +233,7 @@ export default function Index() {
                   <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>All accommodation, including a free night the day before the tour starts</li>
                   <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Transport to and from surf spots</li>
                   <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Meals (breakfast & lunch daily)</li>
+                  <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>All surf lessons</li>
                   <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Surf board rental for the week</li>
                   <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Rash vest provided</li>
                   <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Professional surf instructors</li>
@@ -246,6 +251,9 @@ export default function Index() {
                 <div className="bg-yellow/40 rounded-2xl p-6 shadow-sm">
                   <h3 className="font-display text-lg text-foreground uppercase tracking-wider mb-2">📋 Cancellation Policy</h3>
                   <p className="text-foreground/80 text-sm">Non-refundable within one week of start date. Fully refundable 7+ days before if cancelled by you or Mad Monkey.</p>
+                </div>
+                <div className="bg-card/80 backdrop-blur rounded-2xl p-6 shadow-md border border-border">
+                  <p className="text-foreground/80 text-base font-semibold leading-relaxed">No hidden costs — accommodation, breakfast and lunch, & surf lessons + board rental are included in your package.</p>
                 </div>
                 <div className="text-center md:text-left">
                   <a href={BOOK_NOW_URL} target="_blank" rel="noopener noreferrer" className="inline-block bg-coral text-primary-foreground px-10 py-4 font-display text-2xl uppercase tracking-wider hover:brightness-110 transition-all shadow-lg rounded-full">
