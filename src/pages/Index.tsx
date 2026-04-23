@@ -12,7 +12,7 @@ import surfLesson1 from '@/assets/surf-lesson-1.jpg';
 import surfLesson2 from '@/assets/surf-lesson-2.png';
 import surfLesson3 from '@/assets/surf-lesson-3.png';
 import surfLesson4 from '@/assets/surf-lesson-4.jpg';
-import priceSticker from '@/assets/price-sticker.png';
+import priceSticker from '@/assets/price-sticker-blank.png';
 
 const BOOK_NOW_URL = 'https://madmonkeyhostels.com/tours-events/surf-camp';
 
