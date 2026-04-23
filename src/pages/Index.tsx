@@ -102,12 +102,11 @@ export default function Index() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="torn-edge-all overflow-hidden relative">
             <img src={surfLesson1} alt="Learning to surf in Kuta Lombok" className="w-full h-[400px] md:h-[600px] object-cover" loading="lazy" />
-            <img
-              src={priceSticker}
-              alt="$880 USD per person"
-              className="absolute top-4 left-4 md:top-8 md:left-8 w-32 md:w-48 h-auto -rotate-12 drop-shadow-xl pointer-events-none"
-              loading="lazy"
-            />
+            <div className="absolute top-4 left-4 md:top-8 md:left-8 w-36 md:w-52 -rotate-12 drop-shadow-xl pointer-events-none bg-yellow text-foreground rounded-full aspect-square flex flex-col items-center justify-center text-center border-4 border-card shadow-lg">
+              <span className="font-display text-2xl md:text-4xl text-coral uppercase leading-none">$700</span>
+              <span className="font-display text-lg md:text-2xl uppercase leading-none">USD</span>
+              <span className="mt-1 text-xs md:text-sm font-bold uppercase tracking-wide">All Inclusive</span>
+            </div>
           </div>
         </div>
       </section>
@@ -128,9 +127,14 @@ export default function Index() {
               <span className="bg-blue px-4 py-2 rounded-full text-sm font-bold shadow-sm">⏱️ 7 Days</span>
               <span className="bg-coral/20 px-4 py-2 rounded-full text-sm font-bold shadow-sm">👥 Max 16 Guests</span>
             </div>
+            <div className="inline-flex flex-col sm:flex-row gap-2 mb-6 bg-yellow text-foreground px-5 py-3 rounded-2xl -rotate-2 shadow-md border border-border font-display text-xl uppercase tracking-wider">
+              <span>All Inclusive Surf</span>
+              <span className="hidden sm:inline">/</span>
+              <span>All Inclusive Stays</span>
+            </div>
             <div className="bg-card rounded-xl p-5 shadow-sm border border-border">
-              <p className="font-display text-2xl text-coral uppercase tracking-wider mb-1">$880 USD</p>
-              <p className="text-sm text-muted-foreground">15,000,000 IDR per person</p>
+              <p className="font-display text-2xl text-coral uppercase tracking-wider mb-1">$700 USD All Inclusive</p>
+              <p className="text-sm text-muted-foreground">12,000,000 IDR per person / all inclusive</p>
             </div>
           </div>
           <div className="w-full md:w-1/2">
