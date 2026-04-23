@@ -156,24 +156,24 @@ export default function Index() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <ScheduleCard
-              day="Monday"
-              subtitle="Welcome Day"
-              details="Welcome session with the crew and your surf instructors. Practice pop-ups on the beach, smash lunch together, grab your welcome pack with merch, then head back to the hostel for family dinner and the first night's event. Let's gooo. 🤙"
+              day="Sunday"
+              subtitle="Arrival Day"
+              details="Check in, drop your bags, and soak it all in. Tonight's about meeting your fellow surfers, getting settled into the hostel, and kicking off the week right. No agenda — just good vibes and new faces."
             />
             <ScheduleCard
-              day="Tuesday – Friday"
+              day="Monday – Friday"
               subtitle="Surf. Eat. Repeat."
               details="Brekkie first, then hit the waves around 9-10AM — different beaches each day depending on conditions. Back for lunch and video analysis with your instructors (watch yourself eat it in slo-mo). Afternoon surf sesh, then nightly events. Rinse and repeat."
             />
             <ScheduleCard
               day="Saturday"
               subtitle="Boat Party Day 🎉"
-              details="Morning surf as usual, then ALL camp members pile onto the boat party with exclusive drink deals. Nurse the hangover, explore some non-surf beaches, then normal service resumes for the arvo surf session and night events."
+              details="One last morning surf to cap off the week, then ALL camp members pile onto the boat party. The perfect send-off to a week of waves and good times."
             />
             <ScheduleCard
               day="Sunday"
-              subtitle="Chill & Farewell"
-              details="Sleep in, explore the non-surf beaches, or just vibe by the pool. Afternoon surf session to wrap things up, then finish the week strong with a pub quiz. Legends only. 🏆"
+              subtitle="See You Next Time"
+              details="Sleep in, take it easy, and check out when you're ready. Not ready to leave? Extend your stay — no one would blame you. It's been a week to remember."
             />
           </div>
           <div className="mt-12 text-center">
