@@ -102,10 +102,13 @@ export default function Index() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="torn-edge-all overflow-hidden relative">
             <img src={surfLesson1} alt="Learning to surf in Kuta Lombok" className="w-full h-[400px] md:h-[600px] object-cover" loading="lazy" />
-            <div className="absolute top-4 left-4 md:top-8 md:left-8 w-36 md:w-52 -rotate-12 drop-shadow-xl pointer-events-none bg-yellow text-foreground rounded-full aspect-square flex flex-col items-center justify-center text-center border-4 border-card shadow-lg">
-              <span className="font-display text-2xl md:text-4xl text-coral uppercase leading-none">$700</span>
-              <span className="font-display text-lg md:text-2xl uppercase leading-none">USD</span>
-              <span className="mt-1 text-xs md:text-sm font-bold uppercase tracking-wide">All Inclusive</span>
+            <div className="absolute top-4 left-4 md:top-8 md:left-8 w-32 md:w-48 h-auto -rotate-12 drop-shadow-xl pointer-events-none">
+              <img src={priceSticker} alt="$700 USD all inclusive" className="w-full h-auto" loading="lazy" />
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-5 md:px-7 -mt-1">
+                <span className="font-display text-2xl md:text-4xl text-primary-foreground uppercase leading-none drop-shadow-sm">$700</span>
+                <span className="font-display text-base md:text-2xl text-primary-foreground uppercase leading-none drop-shadow-sm">USD</span>
+                <span className="mt-1 text-[10px] md:text-sm font-bold text-primary-foreground uppercase tracking-wide leading-tight drop-shadow-sm">All Inclusive</span>
+              </div>
             </div>
           </div>
         </div>
