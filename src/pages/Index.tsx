@@ -220,7 +220,7 @@ export default function Index() {
         <div className="bg-blue py-16 md:py-24">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="font-display text-4xl md:text-6xl text-coral text-stroke-sm uppercase tracking-wider mb-4">
-              What's Included
+              Everything Included. Just Show Up & Surf.
             </h2>
             <p className="text-foreground/70 text-lg mb-12 max-w-2xl">
               Everything you need for the ultimate surf week — no hidden costs, no stress.
@@ -233,6 +233,7 @@ export default function Index() {
                   <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>All accommodation, including a free night the day before the tour starts</li>
                   <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Transport to and from surf spots</li>
                   <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Meals (breakfast & lunch daily)</li>
+                  <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>All surf lessons</li>
                   <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Surf board rental for the week</li>
                   <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Rash vest provided</li>
                   <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Professional surf instructors</li>
@@ -250,6 +251,9 @@ export default function Index() {
                 <div className="bg-yellow/40 rounded-2xl p-6 shadow-sm">
                   <h3 className="font-display text-lg text-foreground uppercase tracking-wider mb-2">📋 Cancellation Policy</h3>
                   <p className="text-foreground/80 text-sm">Non-refundable within one week of start date. Fully refundable 7+ days before if cancelled by you or Mad Monkey.</p>
+                </div>
+                <div className="bg-card/80 backdrop-blur rounded-2xl p-6 shadow-md border border-border">
+                  <p className="text-foreground/80 text-base font-semibold leading-relaxed">No hidden costs — accommodation, breakfast and lunch, & surf lessons + board rental are included in your package.</p>
                 </div>
                 <div className="text-center md:text-left">
                   <a href={BOOK_NOW_URL} target="_blank" rel="noopener noreferrer" className="inline-block bg-coral text-primary-foreground px-10 py-4 font-display text-2xl uppercase tracking-wider hover:brightness-110 transition-all shadow-lg rounded-full">
