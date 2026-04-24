@@ -223,7 +223,8 @@ export default function Index() {
         <div className="bg-blue py-16 md:py-24">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="font-display text-4xl md:text-6xl text-coral text-stroke-sm uppercase tracking-wider mb-4">
-              Everything Included. Just Show Up & Surf.
+              Everything Included.<br />
+              Just Show Up & Surf.
             </h2>
             <p className="text-foreground/70 text-lg mb-12 max-w-2xl">
               Everything you need for the ultimate surf week — no hidden costs, no stress.
