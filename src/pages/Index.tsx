@@ -130,10 +130,9 @@ export default function Index() {
               <span className="bg-blue px-4 py-2 rounded-full text-sm font-bold shadow-sm">⏱️ 7 Days</span>
               <span className="bg-coral/20 px-4 py-2 rounded-full text-sm font-bold shadow-sm">👥 Max 16 Guests</span>
             </div>
-            <div className="inline-flex flex-col sm:flex-row gap-2 mb-6 bg-yellow text-foreground px-5 py-3 rounded-2xl -rotate-2 shadow-md border border-border font-display text-xl uppercase tracking-wider">
-              <span>All Inclusive Surf</span>
-              <span className="hidden sm:inline">/</span>
-              <span>All Inclusive Stays</span>
+            <div className="flex flex-col sm:flex-row gap-2 mb-6">
+              <span className="bg-yellow text-foreground px-5 py-3 rounded-2xl -rotate-2 shadow-md border border-border font-display text-xl uppercase tracking-wider inline-block">All Inclusive Surf</span>
+              <span className="bg-yellow text-foreground px-5 py-3 rounded-2xl rotate-1 shadow-md border border-border font-display text-xl uppercase tracking-wider inline-block">All Inclusive Stays</span>
             </div>
             <div className="bg-card rounded-xl p-5 shadow-sm border border-border">
               <p className="font-display text-2xl text-coral uppercase tracking-wider mb-1">$700 USD All Inclusive</p>
