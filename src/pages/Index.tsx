@@ -54,7 +54,7 @@ export default function Index() {
 
       {/* ===================== HERO ===================== */}
       <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
-        <img src={heroDrone} alt="Kuta Lombok Surf Camp" className="absolute -top-[10%] -left-[10%] w-[120%] h-[120%] object-cover object-center" />
+        <img src={heroDrone} alt="Kuta Lombok Surf Camp" className="absolute -top-[17%] -left-[17%] w-[135%] h-[135%] object-cover object-center" />
         <div className="absolute inset-0 bg-foreground/30 z-[1]" />
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <img src={surfCampLogo} alt="Mad Monkey Surf Camp Kuta Lombok" className="w-72 md:w-[28rem] mx-auto mb-8 drop-shadow-2xl" />
