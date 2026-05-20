@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import {
   ArrowUp,
+  ChevronDown,
   Coffee,
   Users,
   UtensilsCrossed,
@@ -169,16 +170,34 @@ export default function Index() {
       {/* ===================== WEEKLY SCHEDULE ===================== */}
       <section className="bg-pink/30 py-16 md:py-24">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 md:gap-4 lg:gap-5">
-            <ScheduleColumn day="CHECK-IN" activities={[{ label: "Welcome Session", icon: Users }, { label: "Pub Quiz", icon: HelpCircle }]} />
-            <ScheduleColumn day="MON" activities={[{ label: "Breakfast", icon: Coffee }, { label: "Welcome Session", icon: Users }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Surf", icon: Waves }, { label: "Family Dinner", icon: Utensils }, { label: "Karaoke", icon: Mic }]} />
-            <ScheduleColumn day="TUE" activities={[{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Theory", icon: BookOpen }, { label: "Music Quiz", icon: Music }]} />
-            <ScheduleColumn day="WED" activities={[{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Pool Party", icon: PartyPopper }]} />
-            <ScheduleColumn day="THU" activities={[{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Video Analysis", icon: Video }, { label: "Killer Pool", icon: CircleDot }]} />
-            <ScheduleColumn day="FRI" activities={[{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Video Analysis", icon: Video }, { label: "Boozy Bingo", icon: Beer }]} />
-            <ScheduleColumn day="SAT" activities={[{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Sunset", icon: Sunset }, { label: "DJ Night", icon: Disc3 }]} />
-            <ScheduleColumn day="SUN" activities={[{ label: "Breakfast", icon: Coffee }, { label: "Check Out", icon: LogOut }]} />
-          </div>
+          {(() => {
+            const days = [
+              { day: "CHECK-IN", activities: [{ label: "Welcome Session", icon: Users }, { label: "Pub Quiz", icon: HelpCircle }] },
+              { day: "MON", activities: [{ label: "Breakfast", icon: Coffee }, { label: "Welcome Session", icon: Users }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Surf", icon: Waves }, { label: "Family Dinner", icon: Utensils }, { label: "Karaoke", icon: Mic }] },
+              { day: "TUE", activities: [{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Theory", icon: BookOpen }, { label: "Music Quiz", icon: Music }] },
+              { day: "WED", activities: [{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Pool Party", icon: PartyPopper }] },
+              { day: "THU", activities: [{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Video Analysis", icon: Video }, { label: "Killer Pool", icon: CircleDot }] },
+              { day: "FRI", activities: [{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Video Analysis", icon: Video }, { label: "Boozy Bingo", icon: Beer }] },
+              { day: "SAT", activities: [{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Sunset", icon: Sunset }, { label: "DJ Night", icon: Disc3 }] },
+              { day: "SUN", activities: [{ label: "Breakfast", icon: Coffee }, { label: "Check Out", icon: LogOut }] },
+            ];
+            return (
+              <>
+                {/* Desktop / tablet: column grid */}
+                <div className="hidden sm:grid grid-cols-4 lg:grid-cols-8 gap-3 md:gap-4 lg:gap-5">
+                  {days.map((d) => (
+                    <ScheduleColumn key={d.day} day={d.day} activities={d.activities} />
+                  ))}
+                </div>
+                {/* Mobile: accordion */}
+                <div className="sm:hidden flex flex-col gap-3">
+                  {days.map((d) => (
+                    <ScheduleAccordion key={d.day} day={d.day} activities={d.activities} />
+                  ))}
+                </div>
+              </>
+            );
+          })()}
           <div className="mt-12 text-center">
             <a href={BOOK_NOW_URL} target="_blank" rel="noopener noreferrer" className="inline-block bg-coral text-primary-foreground px-10 py-4 font-display text-2xl uppercase tracking-wider hover:brightness-110 transition-all shadow-lg rounded-full">
               Book Now
@@ -389,6 +408,25 @@ function ScheduleColumn({ day, activities }: { day: string; activities: { label:
         ))}
       </ul>
     </div>
+  );
+}
+
+function ScheduleAccordion({ day, activities }: { day: string; activities: { label: string; icon: LucideIcon }[] }) {
+  return (
+    <details className="bg-card rounded-lg shadow-sm border border-border group">
+      <summary className="flex items-center justify-between px-4 py-3 cursor-pointer list-none">
+        <span className="font-display text-base tracking-widest text-foreground/80">{day}</span>
+        <ChevronDown className="w-5 h-5 text-coral transition-transform group-open:rotate-180" />
+      </summary>
+      <ul className="grid grid-cols-3 gap-4 px-4 pb-4 pt-2 border-t border-border/60">
+        {activities.map(({ label, icon: Icon }) => (
+          <li key={label} className="flex flex-col items-center text-center gap-1.5">
+            <Icon className="w-7 h-7 text-coral" strokeWidth={1.4} />
+            <span className="text-[11px] text-foreground/70 leading-tight">{label}</span>
+          </li>
+        ))}
+      </ul>
+    </details>
   );
 }
 
