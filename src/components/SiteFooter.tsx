@@ -63,7 +63,7 @@ export default function SiteFooter() {
           {/* Logo & socials */}
           <div className="flex flex-col items-center md:items-start">
             <div className="flex items-center gap-3 mb-4">
-              <img src={logo} alt="Mad Monkey" className="h-16 w-auto object-contain brightness-0 invert" />
+              <img src={logo} alt="Mad Monkey" className="h-16 w-auto object-contain" />
             </div>
             <div className="flex gap-4 mt-2">
               {socialLinks.map(social => (
