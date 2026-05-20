@@ -160,7 +160,7 @@ export default function Index() {
             <ScheduleCard
               day="Check-in Day"
               subtitle="Welcome to the Crew"
-              activities={["New check in", "Welcome session for the surf camp", "Pub quiz"]}
+              activities={["Welcome session for the surf camp", "Pub quiz"]}
             />
             <ScheduleCard
               day="Monday"
