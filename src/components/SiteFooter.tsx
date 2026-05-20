@@ -1,5 +1,9 @@
-import { Instagram, Facebook, Youtube } from 'lucide-react';
 import logo from '@/assets/footer-logo.png';
+import instagramIcon from '@/assets/social/instagram.svg';
+import tiktokIcon from '@/assets/social/tiktok.svg';
+import xIcon from '@/assets/social/x.webp';
+import facebookIcon from '@/assets/social/facebook.svg';
+import youtubeIcon from '@/assets/social/youtube.svg';
 
 const MM_BASE = 'https://madmonkeyhostels.com';
 
@@ -49,9 +53,11 @@ const footerColumns = [
 ];
 
 const socialLinks = [
-  { icon: Instagram, href: 'https://www.instagram.com/madmonkeyhostels/', label: 'Instagram' },
-  { icon: Facebook, href: 'https://www.facebook.com/MadMonkeyHostels', label: 'Facebook' },
-  { icon: Youtube, href: 'https://www.youtube.com/channel/UCkUGlFdhp5Ndk68j_QRS1kw', label: 'YouTube' },
+  { icon: instagramIcon, href: 'https://www.instagram.com/madmonkeyhostels/', label: 'Instagram' },
+  { icon: tiktokIcon, href: 'https://www.tiktok.com/@madmonkeyhostels', label: 'TikTok' },
+  { icon: xIcon, href: 'https://x.com/madmonkeyhostel', label: 'X' },
+  { icon: facebookIcon, href: 'https://www.facebook.com/MadMonkeyHostels', label: 'Facebook' },
+  { icon: youtubeIcon, href: 'https://www.youtube.com/channel/UCkUGlFdhp5Ndk68j_QRS1kw', label: 'YouTube' },
 ];
 
 export default function SiteFooter() {
@@ -72,22 +78,12 @@ export default function SiteFooter() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary-foreground/60 hover:text-coral transition-colors transform hover:scale-110"
+                  className="transition-transform transform hover:scale-110"
                   aria-label={social.label}
                 >
-                  <social.icon size={22} />
+                  <img src={social.icon} alt={social.label} className="w-8 h-8 object-contain" />
                 </a>
               ))}
-              {/* TikTok icon (no lucide icon available) */}
-              <a
-                href="https://www.tiktok.com/@madmonkeyhostels"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary-foreground/60 hover:text-coral transition-colors transform hover:scale-110 font-bold text-sm leading-none flex items-center justify-center w-[22px] h-[22px]"
-                aria-label="TikTok"
-              >
-                TT
-              </a>
             </div>
           </div>
 
