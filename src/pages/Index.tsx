@@ -172,27 +172,27 @@ export default function Index() {
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           {(() => {
             const days = [
-              { day: "CHECK-IN", activities: [{ label: "Welcome Session", icon: Users }, { label: "Pub Quiz", icon: HelpCircle }] },
-              { day: "MON", activities: [{ label: "Breakfast", icon: Coffee }, { label: "Welcome Session", icon: Users }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Surf", icon: Waves }, { label: "Family Dinner", icon: Utensils }, { label: "Karaoke", icon: Mic }] },
-              { day: "TUE", activities: [{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Theory", icon: BookOpen }, { label: "Music Quiz", icon: Music }] },
-              { day: "WED", activities: [{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Pool Party", icon: PartyPopper }] },
-              { day: "THU", activities: [{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Video Analysis", icon: Video }, { label: "Killer Pool", icon: CircleDot }] },
-              { day: "FRI", activities: [{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Video Analysis", icon: Video }, { label: "Boozy Bingo", icon: Beer }] },
-              { day: "SAT", activities: [{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Sunset", icon: Sunset }, { label: "DJ Night", icon: Disc3 }] },
-              { day: "SUN", activities: [{ label: "Breakfast", icon: Coffee }, { label: "Check Out", icon: LogOut }] },
+              { day: "CHECK-IN", subtitle: "Welcome to the Crew", activities: [{ label: "Welcome Session", icon: Users }, { label: "Pub Quiz", icon: HelpCircle }] },
+              { day: "MON", subtitle: "Kick-Off Day", activities: [{ label: "Breakfast", icon: Coffee }, { label: "Welcome Session", icon: Users }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Surf", icon: Waves }, { label: "Family Dinner", icon: Utensils }, { label: "Karaoke", icon: Mic }] },
+              { day: "TUE", subtitle: "Into the Swing", activities: [{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Theory", icon: BookOpen }, { label: "Music Quiz", icon: Music }] },
+              { day: "WED", subtitle: "Midweek Splash", activities: [{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Pool Party", icon: PartyPopper }] },
+              { day: "THU", subtitle: "Dial It In", activities: [{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Video Analysis", icon: Video }, { label: "Killer Pool", icon: CircleDot }] },
+              { day: "FRI", subtitle: "Big Night Energy", activities: [{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Video Analysis", icon: Video }, { label: "Boozy Bingo", icon: Beer }] },
+              { day: "SAT", subtitle: "The Last Hurrah", activities: [{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Sunset", icon: Sunset }, { label: "DJ Night", icon: Disc3 }] },
+              { day: "SUN", subtitle: "See You Next Time", activities: [{ label: "Breakfast", icon: Coffee }, { label: "Check Out", icon: LogOut }] },
             ];
             return (
               <>
                 {/* Desktop / tablet: column grid */}
                 <div className="hidden sm:grid grid-cols-4 lg:grid-cols-8 gap-3 md:gap-4 lg:gap-5">
                   {days.map((d) => (
-                    <ScheduleColumn key={d.day} day={d.day} activities={d.activities} />
+                    <ScheduleColumn key={d.day} day={d.day} subtitle={d.subtitle} activities={d.activities} />
                   ))}
                 </div>
                 {/* Mobile: accordion */}
                 <div className="sm:hidden flex flex-col gap-3">
                   {days.map((d) => (
-                    <ScheduleAccordion key={d.day} day={d.day} activities={d.activities} />
+                    <ScheduleAccordion key={d.day} day={d.day} subtitle={d.subtitle} activities={d.activities} />
                   ))}
                 </div>
               </>
@@ -393,12 +393,13 @@ function ScheduleCard({ day, subtitle, activities }: { day: string; subtitle: st
   );
 }
 
-function ScheduleColumn({ day, activities }: { day: string; activities: { label: string; icon: LucideIcon }[] }) {
+function ScheduleColumn({ day, subtitle, activities }: { day: string; subtitle: string; activities: { label: string; icon: LucideIcon }[] }) {
   return (
     <div className="bg-card rounded-lg shadow-sm border border-border px-2 lg:px-4 py-4 lg:py-6 flex flex-col">
-      <h3 className="font-display text-base md:text-lg lg:text-2xl text-foreground/80 tracking-widest text-center pb-3 lg:pb-5 border-b border-border/70">
-        {day}
-      </h3>
+      <div className="text-center pb-3 lg:pb-5 border-b border-border/70">
+        <h3 className="font-display text-base md:text-lg lg:text-2xl text-foreground/80 tracking-widest">{day}</h3>
+        <p className="text-[10px] md:text-xs lg:text-sm text-muted-foreground mt-1 leading-tight">{subtitle}</p>
+      </div>
       <ul className="flex flex-col items-center gap-5 lg:gap-7 pt-5 lg:pt-7">
         {activities.map(({ label, icon: Icon }) => (
           <li key={label} className="flex flex-col items-center text-center gap-1.5 w-full">
@@ -411,11 +412,14 @@ function ScheduleColumn({ day, activities }: { day: string; activities: { label:
   );
 }
 
-function ScheduleAccordion({ day, activities }: { day: string; activities: { label: string; icon: LucideIcon }[] }) {
+function ScheduleAccordion({ day, subtitle, activities }: { day: string; subtitle: string; activities: { label: string; icon: LucideIcon }[] }) {
   return (
     <details className="bg-card rounded-lg shadow-sm border border-border group">
       <summary className="flex items-center justify-between px-4 py-3 cursor-pointer list-none">
-        <span className="font-display text-base tracking-widest text-foreground/80">{day}</span>
+        <span className="flex flex-col">
+          <span className="font-display text-base tracking-widest text-foreground/80">{day}</span>
+          <span className="text-xs text-muted-foreground">{subtitle}</span>
+        </span>
         <ChevronDown className="w-5 h-5 text-coral transition-transform group-open:rotate-180" />
       </summary>
       <ul className="grid grid-cols-3 gap-4 px-4 pb-4 pt-2 border-t border-border/60">
