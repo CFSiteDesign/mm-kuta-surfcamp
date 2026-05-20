@@ -253,7 +253,7 @@ export default function Index() {
                 </div>
                 <div className="bg-yellow/40 rounded-2xl p-6 shadow-sm">
                   <h3 className="font-display text-lg text-foreground uppercase tracking-wider mb-2">📋 Cancellation Policy</h3>
-                  <p className="text-foreground/80 text-sm">Non-refundable within one week of start date. Fully refundable 7+ days before if cancelled by you or Mad Monkey.</p>
+                  <p className="text-foreground/80 text-sm">Non-refundable within one week of start date. Fully refundable 7+ days before if cancelled by you or Mad Monkey. Mad Monkey reserves the right to cancel the Surf Camp if the minimum requirement of 6 participants is not met.</p>
                 </div>
                 <div className="bg-card/80 backdrop-blur rounded-2xl p-6 shadow-md border border-border">
                   <p className="text-foreground/80 text-base font-semibold leading-relaxed">No hidden costs — accommodation, breakfast and lunch, & surf lessons + board rental are included in your package.</p>
