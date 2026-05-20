@@ -168,8 +168,8 @@ export default function Index() {
 
       {/* ===================== WEEKLY SCHEDULE ===================== */}
       <section className="bg-pink/30 py-16 md:py-24">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 md:gap-4">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 md:gap-4 lg:gap-5">
             <ScheduleColumn day="CHECK-IN" activities={[{ label: "Welcome Session", icon: Users }, { label: "Pub Quiz", icon: HelpCircle }]} />
             <ScheduleColumn day="MON" activities={[{ label: "Breakfast", icon: Coffee }, { label: "Welcome Session", icon: Users }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Surf", icon: Waves }, { label: "Family Dinner", icon: Utensils }, { label: "Karaoke", icon: Mic }]} />
             <ScheduleColumn day="TUE" activities={[{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Theory", icon: BookOpen }, { label: "Music Quiz", icon: Music }]} />
@@ -376,15 +376,15 @@ function ScheduleCard({ day, subtitle, activities }: { day: string; subtitle: st
 
 function ScheduleColumn({ day, activities }: { day: string; activities: { label: string; icon: LucideIcon }[] }) {
   return (
-    <div className="bg-card rounded-lg shadow-sm border border-border px-2 py-4 flex flex-col">
-      <h3 className="font-display text-base md:text-lg text-foreground/80 tracking-widest text-center pb-3 border-b border-border/70">
+    <div className="bg-card rounded-lg shadow-sm border border-border px-2 lg:px-4 py-4 lg:py-6 flex flex-col">
+      <h3 className="font-display text-base md:text-lg lg:text-2xl text-foreground/80 tracking-widest text-center pb-3 lg:pb-5 border-b border-border/70">
         {day}
       </h3>
-      <ul className="flex flex-col items-center gap-5 pt-5">
+      <ul className="flex flex-col items-center gap-5 lg:gap-7 pt-5 lg:pt-7">
         {activities.map(({ label, icon: Icon }) => (
           <li key={label} className="flex flex-col items-center text-center gap-1.5 w-full">
-            <Icon className="w-7 h-7 md:w-8 md:h-8 text-coral" strokeWidth={1.4} />
-            <span className="text-[11px] md:text-xs text-foreground/70 leading-tight px-1">{label}</span>
+            <Icon className="w-7 h-7 md:w-8 md:h-8 lg:w-11 lg:h-11 text-coral" strokeWidth={1.4} />
+            <span className="text-[11px] md:text-xs lg:text-sm text-foreground/70 leading-tight px-1">{label}</span>
           </li>
         ))}
       </ul>
