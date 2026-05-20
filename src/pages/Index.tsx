@@ -1,5 +1,24 @@
 import { useState, useEffect } from 'react';
-import { ArrowUp } from 'lucide-react';
+import {
+  ArrowUp,
+  Coffee,
+  Users,
+  UtensilsCrossed,
+  Waves,
+  Utensils,
+  Mic,
+  BookOpen,
+  Music,
+  PartyPopper,
+  Video,
+  CircleDot,
+  Beer,
+  Sunset,
+  Disc3,
+  LogOut,
+  HelpCircle,
+  type LucideIcon,
+} from 'lucide-react';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { supabase } from '@/integrations/supabase/client';
@@ -150,53 +169,15 @@ export default function Index() {
       {/* ===================== WEEKLY SCHEDULE ===================== */}
       <section className="bg-pink/30 py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-display text-4xl md:text-5xl text-foreground uppercase tracking-wider mb-4">
-            Your Week, Sorted
-          </h2>
-          <p className="text-muted-foreground text-lg mb-12 max-w-2xl">
-            Seven days of waves, vibes, and unforgettable moments. Here's how it goes down.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <ScheduleCard
-              day="Check-in Day"
-              subtitle="Welcome to the Crew"
-              activities={["Welcome session for the surf camp", "Pub quiz"]}
-            />
-            <ScheduleCard
-              day="Monday"
-              subtitle="Kick-Off Day"
-              activities={["Breakfast", "Welcome session with the surf instructors and Mad Monkey staff", "Lunch", "Surf", "Family Dinner", "Karaoke"]}
-            />
-            <ScheduleCard
-              day="Tuesday"
-              subtitle="Into the Swing"
-              activities={["Breakfast", "Morning surf", "Lunch", "Afternoon surf", "Theory", "Music quiz"]}
-            />
-            <ScheduleCard
-              day="Wednesday"
-              subtitle="Midweek Splash"
-              activities={["Breakfast", "Morning surf", "Lunch", "Afternoon surf", "Pool Party"]}
-            />
-            <ScheduleCard
-              day="Thursday"
-              subtitle="Dial It In"
-              activities={["Breakfast", "Morning surf", "Lunch", "Afternoon surf", "Video analysis", "Killer Pool"]}
-            />
-            <ScheduleCard
-              day="Friday"
-              subtitle="Big Night Energy"
-              activities={["Breakfast", "Morning surf", "Lunch", "Afternoon surf", "Video analysis", "Boozy Bingo"]}
-            />
-            <ScheduleCard
-              day="Saturday"
-              subtitle="The Last Hurrah"
-              activities={["Breakfast", "Morning surf", "Lunch", "Sunset", "DJ night"]}
-            />
-            <ScheduleCard
-              day="Sunday"
-              subtitle="See You Next Time"
-              activities={["Breakfast", "Check out"]}
-            />
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 md:gap-4">
+            <ScheduleColumn day="CHECK-IN" activities={[{ label: "Welcome Session", icon: Users }, { label: "Pub Quiz", icon: HelpCircle }]} />
+            <ScheduleColumn day="MON" activities={[{ label: "Breakfast", icon: Coffee }, { label: "Welcome Session", icon: Users }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Surf", icon: Waves }, { label: "Family Dinner", icon: Utensils }, { label: "Karaoke", icon: Mic }]} />
+            <ScheduleColumn day="TUE" activities={[{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Theory", icon: BookOpen }, { label: "Music Quiz", icon: Music }]} />
+            <ScheduleColumn day="WED" activities={[{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Pool Party", icon: PartyPopper }]} />
+            <ScheduleColumn day="THU" activities={[{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Video Analysis", icon: Video }, { label: "Killer Pool", icon: CircleDot }]} />
+            <ScheduleColumn day="FRI" activities={[{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Video Analysis", icon: Video }, { label: "Boozy Bingo", icon: Beer }]} />
+            <ScheduleColumn day="SAT" activities={[{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Sunset", icon: Sunset }, { label: "DJ Night", icon: Disc3 }]} />
+            <ScheduleColumn day="SUN" activities={[{ label: "Breakfast", icon: Coffee }, { label: "Check Out", icon: LogOut }]} />
           </div>
           <div className="mt-12 text-center">
             <a href={BOOK_NOW_URL} target="_blank" rel="noopener noreferrer" className="inline-block bg-coral text-primary-foreground px-10 py-4 font-display text-2xl uppercase tracking-wider hover:brightness-110 transition-all shadow-lg rounded-full">
@@ -386,6 +367,24 @@ function ScheduleCard({ day, subtitle, activities }: { day: string; subtitle: st
           <li key={item} className="flex items-start gap-2 text-sm md:text-base text-foreground/70 leading-relaxed">
             <span className="text-coral font-bold mt-0.5">•</span>
             <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function ScheduleColumn({ day, activities }: { day: string; activities: { label: string; icon: LucideIcon }[] }) {
+  return (
+    <div className="bg-card rounded-lg shadow-sm border border-border px-2 py-4 flex flex-col">
+      <h3 className="font-display text-base md:text-lg text-foreground/80 tracking-widest text-center pb-3 border-b border-border/70">
+        {day}
+      </h3>
+      <ul className="flex flex-col items-center gap-5 pt-5">
+        {activities.map(({ label, icon: Icon }) => (
+          <li key={label} className="flex flex-col items-center text-center gap-1.5 w-full">
+            <Icon className="w-7 h-7 md:w-8 md:h-8 text-coral" strokeWidth={1.4} />
+            <span className="text-[11px] md:text-xs text-foreground/70 leading-tight px-1">{label}</span>
           </li>
         ))}
       </ul>
