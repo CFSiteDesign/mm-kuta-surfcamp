@@ -411,6 +411,25 @@ function ScheduleColumn({ day, activities }: { day: string; activities: { label:
   );
 }
 
+function ScheduleAccordion({ day, activities }: { day: string; activities: { label: string; icon: LucideIcon }[] }) {
+  return (
+    <details className="bg-card rounded-lg shadow-sm border border-border group">
+      <summary className="flex items-center justify-between px-4 py-3 cursor-pointer list-none">
+        <span className="font-display text-base tracking-widest text-foreground/80">{day}</span>
+        <ChevronDown className="w-5 h-5 text-coral transition-transform group-open:rotate-180" />
+      </summary>
+      <ul className="grid grid-cols-3 gap-4 px-4 pb-4 pt-2 border-t border-border/60">
+        {activities.map(({ label, icon: Icon }) => (
+          <li key={label} className="flex flex-col items-center text-center gap-1.5">
+            <Icon className="w-7 h-7 text-coral" strokeWidth={1.4} />
+            <span className="text-[11px] text-foreground/70 leading-tight">{label}</span>
+          </li>
+        ))}
+      </ul>
+    </details>
+  );
+}
+
 /* ===================== SUB-COMPONENTS ===================== */
 
 function WhatToDoCard({ image, title, description }: { image: string; title: string; description: string }) {
