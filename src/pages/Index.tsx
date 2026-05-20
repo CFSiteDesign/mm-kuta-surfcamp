@@ -169,8 +169,8 @@ export default function Index() {
             />
             <ScheduleCard
               day="Saturday"
-              subtitle="Boat Party Day 🎉"
-              details="One last morning surf to cap off the week, then ALL camp members pile onto the boat party. The perfect send-off to a week of waves and good times."
+              subtitle="The Last Hurrah"
+              details="One last morning surf to cap off the week, then we're heading back to the hostel for drinks and a BBQ. The perfect send-off to an epic week of waves and good times."
             />
             <ScheduleCard
               day="Sunday"
