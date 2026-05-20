@@ -158,6 +158,11 @@ export default function Index() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <ScheduleCard
+              day="Check-in Day"
+              subtitle="Welcome to the Crew"
+              activities={["New check in", "Welcome session for the surf camp", "Pub quiz"]}
+            />
+            <ScheduleCard
               day="Monday"
               subtitle="Kick-Off Day"
               activities={["Breakfast", "Welcome session with the surf instructors and Mad Monkey staff", "Lunch", "Surf", "Family Dinner", "Karaoke"]}
@@ -190,7 +195,7 @@ export default function Index() {
             <ScheduleCard
               day="Sunday"
               subtitle="See You Next Time"
-              activities={["Breakfast", "Check out", "New check in", "Welcome session for the surf camp", "Pub quiz"]}
+              activities={["Breakfast", "Check out"]}
             />
           </div>
           <div className="mt-12 text-center">
