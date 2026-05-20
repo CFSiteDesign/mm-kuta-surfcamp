@@ -398,7 +398,7 @@ function ScheduleColumn({ day, subtitle, activities }: { day: string; subtitle: 
     <div className="bg-card rounded-lg shadow-sm border border-border px-2 lg:px-4 py-4 lg:py-6 flex flex-col">
       <div className="flex flex-col items-center pb-3 lg:pb-5 border-b border-border/70 overflow-visible">
         <h3 className="font-display text-base md:text-lg lg:text-2xl text-foreground/80 tracking-widest whitespace-nowrap">{day}</h3>
-        <p className="text-[10px] md:text-xs lg:text-sm text-muted-foreground mt-1 leading-tight whitespace-nowrap">{subtitle}</p>
+        <p className="text-[10px] lg:text-[11px] text-muted-foreground mt-1 leading-tight whitespace-nowrap">{subtitle}</p>
       </div>
       <ul className="flex flex-col items-center gap-5 lg:gap-7 pt-5 lg:pt-7">
         {activities.map(({ label, icon: Icon }) => (
