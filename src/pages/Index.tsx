@@ -170,6 +170,12 @@ export default function Index() {
       {/* ===================== WEEKLY SCHEDULE ===================== */}
       <section className="bg-pink/30 py-16 md:py-24">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-display text-4xl md:text-5xl text-foreground uppercase tracking-wider mb-4">
+            Your Week, Sorted
+          </h2>
+          <p className="text-muted-foreground text-lg mb-12 max-w-2xl">
+            Seven days of waves, vibes, and unforgettable moments. Here's how it goes down.
+          </p>
           {(() => {
             const days = [
               { day: "CHECK-IN", subtitle: "Welcome to the Crew", activities: [{ label: "Welcome Session", icon: Users }, { label: "Pub Quiz", icon: HelpCircle }] },
