@@ -158,24 +158,39 @@ export default function Index() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <ScheduleCard
-              day="Sunday"
-              subtitle="Arrival Day"
-              details="Check in, drop your bags, and soak it all in. Tonight's about meeting your fellow surfers, getting settled into the hostel, and kicking off the week right. No agenda — just good vibes and new faces."
+              day="Monday"
+              subtitle="Kick-Off Day"
+              activities={["Breakfast", "Welcome session with the surf instructors and Mad Monkey staff", "Lunch", "Surf", "Family Dinner", "Karaoke"]}
             />
             <ScheduleCard
-              day="Monday – Friday"
-              subtitle="Surf. Eat. Repeat."
-              details="Brekkie first, then hit the waves around 9-10AM — different beaches each day depending on conditions. Back for lunch and video analysis with your instructors (watch yourself eat it in slo-mo). Afternoon surf sesh, then nightly events. Rinse and repeat."
+              day="Tuesday"
+              subtitle="Into the Swing"
+              activities={["Breakfast", "Morning surf", "Lunch", "Afternoon surf", "Theory", "Music quiz"]}
+            />
+            <ScheduleCard
+              day="Wednesday"
+              subtitle="Midweek Splash"
+              activities={["Breakfast", "Morning surf", "Lunch", "Afternoon surf", "Pool Party"]}
+            />
+            <ScheduleCard
+              day="Thursday"
+              subtitle="Dial It In"
+              activities={["Breakfast", "Morning surf", "Lunch", "Afternoon surf", "Video analysis", "Killer Pool"]}
+            />
+            <ScheduleCard
+              day="Friday"
+              subtitle="Big Night Energy"
+              activities={["Breakfast", "Morning surf", "Lunch", "Afternoon surf", "Video analysis", "Boozy Bingo"]}
             />
             <ScheduleCard
               day="Saturday"
               subtitle="The Last Hurrah"
-              details="One last morning surf to cap off the week, then we're heading back to the hostel for drinks and a BBQ. The perfect send-off to an epic week of waves and good times."
+              activities={["Breakfast", "Morning surf", "Lunch", "Sunset", "DJ night"]}
             />
             <ScheduleCard
               day="Sunday"
               subtitle="See You Next Time"
-              details="Sleep in, take it easy, and check out when you're ready. Not ready to leave? Extend your stay — no one would blame you. It's been a week to remember."
+              activities={["Breakfast", "Check out", "New check in", "Welcome session for the surf camp", "Pub quiz"]}
             />
           </div>
           <div className="mt-12 text-center">
@@ -354,14 +369,21 @@ export default function Index() {
   );
 }
 
-function ScheduleCard({ day, subtitle, details }: { day: string; subtitle: string; details: string }) {
+function ScheduleCard({ day, subtitle, activities }: { day: string; subtitle: string; activities: string[] }) {
   return (
     <div className="bg-card rounded-2xl p-6 shadow-md border border-border">
-      <div className="flex items-baseline gap-3 mb-2">
+      <div className="flex items-baseline gap-3 mb-3 flex-wrap">
         <h3 className="font-display text-xl md:text-2xl text-coral uppercase tracking-wider">{day}</h3>
         <span className="text-sm font-bold text-muted-foreground">— {subtitle}</span>
       </div>
-      <p className="text-sm md:text-base text-foreground/70 leading-relaxed">{details}</p>
+      <ul className="space-y-1.5">
+        {activities.map((item) => (
+          <li key={item} className="flex items-start gap-2 text-sm md:text-base text-foreground/70 leading-relaxed">
+            <span className="text-coral font-bold mt-0.5">•</span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
