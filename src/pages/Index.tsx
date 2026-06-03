@@ -18,6 +18,10 @@ import {
   Disc3,
   LogOut,
   HelpCircle,
+  X,
+  BedDouble,
+  Bath,
+  GlassWater,
   type LucideIcon,
 } from 'lucide-react';
 import SiteHeader from '@/components/SiteHeader';
@@ -33,6 +37,8 @@ import surfLesson2 from '@/assets/surf-lesson-2.png';
 import surfLesson3 from '@/assets/surf-lesson-3.png';
 import surfLesson4 from '@/assets/surf-lesson-4.jpg';
 import priceSticker from '@/assets/price-sticker-clean.png';
+import stayPool from '@/assets/stay-pool.jpg';
+import stayJacuzzi from '@/assets/stay-jacuzzi.png';
 
 const BOOK_NOW_URL = 'https://madmonkeyhostels.com/tours-events/surf-camp';
 
@@ -40,6 +46,7 @@ export default function Index() {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
   const [submitting, setSubmitting] = useState(false);
+  const [showBanner, setShowBanner] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -64,6 +71,11 @@ export default function Index() {
     const handleScroll = () => setShowScrollTop(window.scrollY > 500);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowBanner(true), 10000);
+    return () => clearTimeout(timer);
   }, []);
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -123,11 +135,13 @@ export default function Index() {
           <div className="torn-edge-all overflow-hidden relative">
             <img src={surfLesson1} alt="Learning to surf in Kuta Lombok" className="w-full h-[400px] md:h-[600px] object-cover" loading="lazy" />
             <div className="absolute top-4 left-4 md:top-8 md:left-8 w-32 md:w-48 aspect-square -rotate-12 drop-shadow-xl pointer-events-none">
-              <img src={priceSticker} alt="$700 USD all inclusive" className="w-full h-auto" loading="lazy" />
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8 md:px-12 -mt-1">
-                <span className="font-display text-xl md:text-3xl text-primary-foreground uppercase leading-none drop-shadow-sm">$700</span>
-                <span className="font-display text-sm md:text-xl text-primary-foreground uppercase leading-none drop-shadow-sm">USD</span>
-                <span className="mt-0.5 text-[8px] md:text-[11px] font-bold text-primary-foreground uppercase leading-tight drop-shadow-sm">All Inclusive</span>
+              <div className="w-full h-full animate-attention-pop origin-center">
+                <img src={priceSticker} alt="Secure today for only $100" className="w-full h-auto" loading="lazy" />
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-7 md:px-10 -mt-1">
+                  <span className="text-[9px] md:text-xs font-bold text-primary-foreground uppercase leading-none drop-shadow-sm">Secure Today</span>
+                  <span className="text-[8px] md:text-[10px] font-semibold text-primary-foreground uppercase leading-none drop-shadow-sm mt-0.5">for only</span>
+                  <span className="font-display text-2xl md:text-4xl text-primary-foreground uppercase leading-none drop-shadow-sm mt-0.5">$100</span>
+                </div>
               </div>
             </div>
           </div>
@@ -158,11 +172,77 @@ export default function Index() {
               <p className="font-display text-2xl text-coral uppercase tracking-wider mb-1">$700 USD All Inclusive</p>
               <p className="text-sm text-muted-foreground">12,000,000 IDR per person / all inclusive</p>
             </div>
+
+            {/* Secure-your-spot reinforcement */}
+            <div className="mt-4 bg-[#FF6A00] rounded-xl p-5 shadow-md flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+              <div className="flex-1">
+                <p className="font-display text-xl md:text-2xl text-white uppercase tracking-wider leading-tight">
+                  Secure today for only $100
+                </p>
+                <p className="text-sm text-white/90 mt-1">
+                  Just a $100 deposit locks in your spot — pay the rest later. Limited to 16 spots per week.
+                </p>
+              </div>
+              <a
+                href={BOOK_NOW_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 bg-white text-[#FF6A00] px-7 py-3 rounded-full font-display text-lg uppercase tracking-wider hover:brightness-95 transition-all shadow-sm"
+              >
+                Secure My Spot
+              </a>
+            </div>
           </div>
           <div className="w-full md:w-1/2">
             <div className="torn-edge-all overflow-hidden">
               <img src={surfLesson2} alt="Mad Monkey surf camp vibes" className="w-full h-[350px] md:h-[450px] object-cover" loading="lazy" />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===================== WHERE YOU'RE STAYING ===================== */}
+      <section className="bg-cream pb-12 md:pb-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-display text-4xl md:text-5xl text-foreground uppercase tracking-wider mb-3">
+            Where You're Staying
+          </h2>
+          <p className="text-muted-foreground text-lg mb-10 max-w-2xl">
+            Your home base is just as fun as the waves. Crash, splash, soak, and refuel — it's all right here.
+          </p>
+
+          {/* Image strip */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-10">
+            <div className="torn-edge-all overflow-hidden">
+              <img src={stayPool} alt="Outdoor pool and hangout area at Mad Monkey Kuta Lombok" className="w-full h-[280px] md:h-[340px] object-cover" loading="lazy" />
+            </div>
+            <div className="torn-edge-all overflow-hidden">
+              <img src={stayJacuzzi} alt="Jacuzzi at Mad Monkey Kuta Lombok" className="w-full h-[280px] md:h-[340px] object-cover" loading="lazy" />
+            </div>
+          </div>
+
+          {/* Facilities */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            <StayFacility
+              icon={BedDouble}
+              title="Comfy Rooms"
+              description="Spacious private rooms for couples and solo legends, plus social dorms to meet your new crew. Crash easy after a big day on the water."
+            />
+            <StayFacility
+              icon={Waves}
+              title="Outdoor Pool"
+              description="A large outdoor swimming pool for cooling off, ball games, and the legendary midweek pool party. Cannonballs strongly encouraged."
+            />
+            <StayFacility
+              icon={Bath}
+              title="Jacuzzi"
+              description="Soak those post-surf muscles in the bubbling jacuzzi — drink in hand, sunnies on, zero rush. Pure island recovery mode."
+            />
+            <StayFacility
+              icon={GlassWater}
+              title="Bar & Restaurant"
+              description="On-site bar and restaurant slinging cold drinks and good feeds all day. No need to wander far — the party's already home."
+            />
           </div>
         </div>
       </section>
@@ -368,6 +448,32 @@ export default function Index() {
 
       <SiteFooter />
 
+      {/* ===================== PROMO BANNER ===================== */}
+      {showBanner && (
+        <div className="fixed bottom-0 left-0 w-full z-50 flex justify-center px-3 pb-3 sm:pb-4 pointer-events-none">
+          <div className="pointer-events-auto animate-slide-up relative flex flex-col sm:flex-row items-center gap-3 sm:gap-5 bg-card rounded-2xl shadow-2xl border border-border px-5 py-4 sm:pl-7 sm:pr-12 max-w-2xl w-full sm:w-auto">
+            <button
+              onClick={() => setShowBanner(false)}
+              aria-label="Close banner"
+              className="absolute top-2 right-2 text-muted-foreground hover:text-foreground transition-colors p-1"
+            >
+              <X size={18} />
+            </button>
+            <p className="font-display text-lg sm:text-xl text-foreground uppercase tracking-wider text-center sm:text-left leading-tight pr-4 sm:pr-0">
+              Secure today for only <span className="text-coral">$100 USD</span>
+            </p>
+            <a
+              href={BOOK_NOW_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 bg-[#FF6A00] text-white px-7 py-3 rounded-full font-display text-lg uppercase tracking-wider hover:brightness-110 transition-all shadow-md"
+            >
+              Book Now
+            </a>
+          </div>
+        </div>
+      )}
+
       {/* Scroll to top */}
       <button
         onClick={scrollToTop}
@@ -441,6 +547,18 @@ function ScheduleAccordion({ day, subtitle, activities }: { day: string; subtitl
 }
 
 /* ===================== SUB-COMPONENTS ===================== */
+
+function StayFacility({ icon: Icon, title, description }: { icon: LucideIcon; title: string; description: string }) {
+  return (
+    <div className="bg-card rounded-2xl p-6 shadow-md border border-border hover:shadow-lg transition-shadow">
+      <div className="w-12 h-12 rounded-full bg-coral/15 flex items-center justify-center mb-4">
+        <Icon className="w-6 h-6 text-coral" strokeWidth={1.6} />
+      </div>
+      <h3 className="font-display text-xl text-foreground uppercase tracking-wider mb-2 leading-tight">{title}</h3>
+      <p className="text-sm text-foreground/70 leading-relaxed">{description}</p>
+    </div>
+  );
+}
 
 function WhatToDoCard({ image, title, description }: { image: string; title: string; description: string }) {
   return (

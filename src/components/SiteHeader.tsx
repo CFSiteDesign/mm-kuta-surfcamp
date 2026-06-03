@@ -142,7 +142,7 @@ export default function SiteHeader() {
 
             {/* Right side */}
             <div className="flex items-center gap-2">
-              <a href={`${MM_BASE}/login`} className={`hidden lg:block px-3 py-2 text-sm font-semibold ${textColor} ${hoverColor} transition-colors`}>
+              <a href={`${MM_BASE}/login`} target="_self" className={`hidden lg:block px-3 py-2 text-sm font-semibold ${textColor} ${hoverColor} transition-colors`}>
                 Login
               </a>
               <a
@@ -194,7 +194,7 @@ export default function SiteHeader() {
               </div>
             </details>
             <a href={`${MM_BASE}/mad-loyalty`} className="font-semibold text-lg">Mad Loyalty</a>
-            <a href={`${MM_BASE}/login`} className="font-semibold text-lg">Login</a>
+            <a href={`${MM_BASE}/login`} target="_self" className="font-semibold text-lg">Login</a>
           </div>
         )}
       </nav>
