@@ -173,7 +173,7 @@ export default function Index() {
             <div className="flex flex-wrap gap-3 mb-6">
               <span className="bg-yellow px-4 py-2 rounded-full text-sm font-bold shadow-sm">🏄 All Levels Welcome</span>
               <span className="bg-pink px-4 py-2 rounded-full text-sm font-bold shadow-sm">📅 Every Monday 9AM</span>
-              <span className="bg-blue px-4 py-2 rounded-full text-sm font-bold shadow-sm">⏱️ 7 Days</span>
+              <span className="bg-blue px-4 py-2 rounded-full text-sm font-bold shadow-sm">⏱️ {pricing.nights}</span>
               <span className="bg-coral/20 px-4 py-2 rounded-full text-sm font-bold shadow-sm">👥 Max 16 Guests</span>
             </div>
             <div id="book" className="flex flex-col sm:flex-row gap-2 mb-6">
@@ -278,24 +278,39 @@ export default function Index() {
           <h2 className="font-display text-4xl md:text-5xl text-foreground uppercase tracking-wider mb-4">
             Your Week, Sorted
           </h2>
-          <p className="text-muted-foreground text-lg mb-12 max-w-2xl">
-            Seven days of waves, vibes, and unforgettable moments. Here's how it goes down.
+          <p className="text-muted-foreground text-lg mb-8 max-w-2xl">
+            {itineraryDuration === '7' ? 'Seven' : 'Four'} days of waves, vibes, and unforgettable moments. Here's how it goes down.
           </p>
+          {/* Itinerary duration toggle */}
+          <div className="inline-flex bg-card border border-border rounded-full p-1 mb-10 shadow-sm">
+            {(['4', '7'] as Duration[]).map((d) => (
+              <button
+                key={d}
+                type="button"
+                onClick={() => setItineraryDuration(d)}
+                className={`px-5 py-2 rounded-full font-display text-base uppercase tracking-wider transition-all ${itineraryDuration === d ? 'bg-coral text-primary-foreground shadow-sm' : 'text-foreground/70 hover:text-foreground'}`}
+              >
+                {d} Days
+              </button>
+            ))}
+          </div>
           {(() => {
-            const days = [
-              { day: "CHECK-IN", subtitle: "Welcome to the Crew", activities: [{ label: "Welcome Session", icon: Users }, { label: "Pub Quiz", icon: HelpCircle }] },
-              { day: "MON", subtitle: "Kick-Off Day", activities: [{ label: "Breakfast", icon: Coffee }, { label: "Welcome Session", icon: Users }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Surf", icon: Waves }, { label: "Family Dinner", icon: Utensils }, { label: "Karaoke", icon: Mic }] },
-              { day: "TUE", subtitle: "Into the Swing", activities: [{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Theory", icon: BookOpen }, { label: "Music Quiz", icon: Music }] },
-              { day: "WED", subtitle: "Midweek Splash", activities: [{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Pool Party", icon: PartyPopper }] },
-              { day: "THU", subtitle: "Dial It In", activities: [{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Video Analysis", icon: Video }, { label: "Killer Pool", icon: CircleDot }] },
-              { day: "FRI", subtitle: "Big Night Energy", activities: [{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Video Analysis", icon: Video }, { label: "Boozy Bingo", icon: Beer }] },
-              { day: "SAT", subtitle: "The Last Hurrah", activities: [{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Sunset", icon: Sunset }, { label: "DJ Night", icon: Disc3 }] },
-              { day: "SUN", subtitle: "See You Next Time", activities: [{ label: "Breakfast", icon: Coffee }, { label: "Check Out", icon: LogOut }] },
-            ];
+            const allDays = [
+              { day: "CHECK-IN", subtitle: "Welcome to the Crew", durations: ['4','7'], activities: [{ label: "Welcome Session", icon: Users }, { label: "Pub Quiz", icon: HelpCircle }] },
+              { day: "MON", subtitle: "Kick-Off Day", durations: ['4','7'], activities: [{ label: "Breakfast", icon: Coffee }, { label: "Welcome Session", icon: Users }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Surf", icon: Waves }, { label: "Family Dinner", icon: Utensils }, { label: "Karaoke", icon: Mic }] },
+              { day: "TUE", subtitle: "Into the Swing", durations: ['4','7'], activities: [{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Theory", icon: BookOpen }, { label: "Music Quiz", icon: Music }] },
+              { day: "WED", subtitle: "Midweek Splash", durations: ['4','7'], activities: [{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Pool Party", icon: PartyPopper }] },
+              { day: "THU", subtitle: "Dial It In", durations: ['7'], activities: [{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Killer Pool", icon: CircleDot }] },
+              { day: "FRI", subtitle: "Big Night Energy", durations: ['7'], activities: [{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Boozy Bingo", icon: Beer }] },
+              { day: "SAT", subtitle: "The Last Hurrah", durations: ['7'], activities: [{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Sunset", icon: Sunset }, { label: "DJ Night", icon: Disc3 }] },
+              { day: "SUN", subtitle: "See You Next Time", durations: ['7'], activities: [{ label: "Breakfast", icon: Coffee }, { label: "Check Out", icon: LogOut }] },
+            ] as const;
+            const days = allDays.filter((d) => d.durations.includes(itineraryDuration));
+            const desktopCols = itineraryDuration === '7' ? 'lg:grid-cols-8' : 'lg:grid-cols-4';
             return (
               <>
                 {/* Desktop / tablet: column grid */}
-                <div className="hidden sm:grid grid-cols-4 lg:grid-cols-8 gap-3 md:gap-4 lg:gap-5">
+                <div className={`hidden sm:grid grid-cols-4 ${desktopCols} gap-3 md:gap-4 lg:gap-5`}>
                   {days.map((d) => (
                     <ScheduleColumn key={d.day} day={d.day} subtitle={d.subtitle} activities={d.activities} />
                   ))}
@@ -310,7 +325,7 @@ export default function Index() {
             );
           })()}
           <div className="mt-12 text-center">
-            <a href={BOOK_NOW_URL} target="_blank" rel="noopener noreferrer" className="inline-block bg-coral text-primary-foreground px-10 py-4 font-display text-2xl uppercase tracking-wider hover:brightness-110 transition-all shadow-lg rounded-full">
+            <a href="#book" className="inline-block bg-coral text-primary-foreground px-10 py-4 font-display text-2xl uppercase tracking-wider hover:brightness-110 transition-all shadow-lg rounded-full">
               Book Now
             </a>
           </div>
@@ -357,7 +372,7 @@ export default function Index() {
               Just Show Up & Surf.
             </h2>
             <p className="text-foreground/70 text-lg mb-12 max-w-2xl">
-              Everything you need for the ultimate surf week — no hidden costs, no stress.
+              Everything you need for the ultimate surf trip — no hidden costs, no stress.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Inclusions */}
@@ -371,9 +386,8 @@ export default function Index() {
                   <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Surf board rental for the week</li>
                   <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Rash vest provided</li>
                   <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Professional surf instructors</li>
-                  <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Video analysis sessions</li>
                   <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Welcome pack with merch</li>
-                  <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Saturday boat party access</li>
+                  <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>25% off food & drinks at Mad Monkey</li>
                 </ul>
               </div>
               {/* Need to know */}
@@ -390,7 +404,7 @@ export default function Index() {
                   <p className="text-foreground/80 text-base font-semibold leading-relaxed">No hidden costs — accommodation, breakfast and lunch, & surf lessons + board rental are included in your package.</p>
                 </div>
                 <div className="text-center md:text-left">
-                  <a href={BOOK_NOW_URL} target="_blank" rel="noopener noreferrer" className="inline-block bg-coral text-primary-foreground px-10 py-4 font-display text-2xl uppercase tracking-wider hover:brightness-110 transition-all shadow-lg rounded-full">
+                  <a href={bookUrl} target="_blank" rel="noopener noreferrer" className="inline-block bg-coral text-primary-foreground px-10 py-4 font-display text-2xl uppercase tracking-wider hover:brightness-110 transition-all shadow-lg rounded-full">
                     Book Now
                   </a>
                 </div>
@@ -488,7 +502,7 @@ export default function Index() {
               Secure today for only <span className="text-coral">$100 USD</span>
             </p>
             <a
-              href={BOOK_NOW_URL}
+              href={bookUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="shrink-0 bg-[#FF6A00] text-white px-7 py-3 rounded-full font-display text-lg uppercase tracking-wider hover:brightness-110 transition-all shadow-md"
