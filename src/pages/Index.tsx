@@ -190,7 +190,7 @@ export default function Index() {
                 <p className="text-sm text-muted-foreground">{pricing.idr}</p>
               </div>
             </div>
-            <div className="w-full md:w-1/2 flex flex-col gap-3">
+            <div className="w-full md:w-1/2 flex flex-col gap-3 md:justify-end">
               <div className="torn-edge-all overflow-hidden">
                 <img src={surfLesson2} alt="Mad Monkey surf camp vibes" className="w-full h-[350px] md:h-[450px] object-cover" loading="lazy" />
               </div>
@@ -201,7 +201,7 @@ export default function Index() {
                     key={d}
                     type="button"
                     onClick={() => setDuration(d)}
-                    className={`flex-1 rounded-xl border-2 font-display text-lg md:text-xl uppercase tracking-wider py-4 px-3 transition-all shadow-sm ${
+                    className={`flex-1 rounded-xl border-2 font-display text-lg md:text-xl uppercase tracking-wider py-5 px-3 transition-all shadow-sm ${
                       duration === d
                         ? 'bg-coral border-coral text-primary-foreground shadow-md'
                         : 'bg-card border-border text-foreground/70 hover:border-coral/50 hover:text-foreground'
