@@ -184,34 +184,32 @@ export default function Index() {
                 <span className="bg-yellow text-foreground px-5 py-3 rounded-2xl -rotate-2 shadow-md border border-border font-display text-xl uppercase tracking-wider inline-block">All Inclusive Surf</span>
                 <span className="bg-yellow text-foreground px-5 py-3 rounded-2xl rotate-1 shadow-md border border-border font-display text-xl uppercase tracking-wider inline-block">All Inclusive Stays</span>
               </div>
+              {/* Price box */}
+              <div className="mt-4 bg-card rounded-xl p-5 shadow-sm border border-border flex flex-col justify-center">
+                <p className="font-display text-2xl text-coral uppercase tracking-wider mb-1">{pricing.usd} All Inclusive</p>
+                <p className="text-sm text-muted-foreground">{pricing.idr}</p>
+              </div>
             </div>
             <div className="w-full md:w-1/2 flex flex-col gap-3">
               <div className="torn-edge-all overflow-hidden">
                 <img src={surfLesson2} alt="Mad Monkey surf camp vibes" className="w-full h-[350px] md:h-[450px] object-cover" loading="lazy" />
               </div>
-              <div className="flex flex-col sm:flex-row gap-3">
-                {/* Duration toggle - two equal prominent boxes */}
-                <div className="flex-1 flex gap-2">
-                  {(['4', '7'] as Duration[]).map((d, i) => (
-                    <button
-                      key={d}
-                      type="button"
-                      onClick={() => setDuration(d)}
-                      className={`flex-1 rounded-xl border-2 font-display text-lg md:text-xl uppercase tracking-wider py-4 px-3 transition-all shadow-sm ${
-                        duration === d
-                          ? 'bg-coral border-coral text-primary-foreground shadow-md'
-                          : 'bg-card border-border text-foreground/70 hover:border-coral/50 hover:text-foreground'
-                      } ${i === 0 ? '-rotate-1' : 'rotate-1'}`}
-                    >
-                      {d} Days
-                    </button>
-                  ))}
-                </div>
-                {/* Price box */}
-                <div className="flex-1 bg-card rounded-xl p-5 shadow-sm border border-border flex flex-col justify-center">
-                  <p className="font-display text-2xl text-coral uppercase tracking-wider mb-1">{pricing.usd} All Inclusive</p>
-                  <p className="text-sm text-muted-foreground">{pricing.idr}</p>
-                </div>
+              {/* Duration toggle - two equal prominent boxes */}
+              <div className="flex gap-2">
+                {(['4', '7'] as Duration[]).map((d, i) => (
+                  <button
+                    key={d}
+                    type="button"
+                    onClick={() => setDuration(d)}
+                    className={`flex-1 rounded-xl border-2 font-display text-lg md:text-xl uppercase tracking-wider py-4 px-3 transition-all shadow-sm ${
+                      duration === d
+                        ? 'bg-coral border-coral text-primary-foreground shadow-md'
+                        : 'bg-card border-border text-foreground/70 hover:border-coral/50 hover:text-foreground'
+                    } ${i === 0 ? '-rotate-1' : 'rotate-1'}`}
+                  >
+                    {d} Days
+                  </button>
+                ))}
               </div>
             </div>
           </div>
