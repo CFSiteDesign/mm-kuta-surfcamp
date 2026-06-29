@@ -176,13 +176,26 @@ export default function Index() {
               <span className="bg-blue px-4 py-2 rounded-full text-sm font-bold shadow-sm">⏱️ 7 Days</span>
               <span className="bg-coral/20 px-4 py-2 rounded-full text-sm font-bold shadow-sm">👥 Max 16 Guests</span>
             </div>
-            <div className="flex flex-col sm:flex-row gap-2 mb-6">
+            <div id="book" className="flex flex-col sm:flex-row gap-2 mb-6">
               <span className="bg-yellow text-foreground px-5 py-3 rounded-2xl -rotate-2 shadow-md border border-border font-display text-xl uppercase tracking-wider inline-block">All Inclusive Surf</span>
               <span className="bg-yellow text-foreground px-5 py-3 rounded-2xl rotate-1 shadow-md border border-border font-display text-xl uppercase tracking-wider inline-block">All Inclusive Stays</span>
             </div>
+            {/* Duration toggle */}
+            <div className="inline-flex bg-card border border-border rounded-full p-1 mb-4 shadow-sm">
+              {(['4', '7'] as Duration[]).map((d) => (
+                <button
+                  key={d}
+                  type="button"
+                  onClick={() => setDuration(d)}
+                  className={`px-5 py-2 rounded-full font-display text-base uppercase tracking-wider transition-all ${duration === d ? 'bg-coral text-primary-foreground shadow-sm' : 'text-foreground/70 hover:text-foreground'}`}
+                >
+                  {d} Days
+                </button>
+              ))}
+            </div>
             <div className="bg-card rounded-xl p-5 shadow-sm border border-border">
-              <p className="font-display text-2xl text-coral uppercase tracking-wider mb-1">$700 USD All Inclusive</p>
-              <p className="text-sm text-muted-foreground">12,000,000 IDR per person / all inclusive</p>
+              <p className="font-display text-2xl text-coral uppercase tracking-wider mb-1">{pricing.usd} All Inclusive</p>
+              <p className="text-sm text-muted-foreground">{pricing.idr}</p>
             </div>
 
             {/* Secure-your-spot reinforcement */}
@@ -196,7 +209,7 @@ export default function Index() {
                 </p>
               </div>
               <a
-                href={BOOK_NOW_URL}
+                href={bookUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="shrink-0 bg-white text-[#FF6A00] px-7 py-3 rounded-full font-display text-lg uppercase tracking-wider hover:brightness-95 transition-all shadow-sm"
