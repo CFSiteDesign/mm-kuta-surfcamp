@@ -57,7 +57,6 @@ export default function Index() {
   const [submitting, setSubmitting] = useState(false);
   const [showBanner, setShowBanner] = useState(false);
   const [duration, setDuration] = useState<Duration>('7');
-  const [itineraryDuration, setItineraryDuration] = useState<Duration>('7');
   const bookUrl = BOOK_URLS[duration];
   const pricing = PRICING[duration];
 
