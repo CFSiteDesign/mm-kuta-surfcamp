@@ -296,8 +296,8 @@ export default function Index() {
               { day: "SAT", subtitle: "The Last Hurrah", durations: ['7'], activities: [{ label: "Morning Surf", icon: Waves }, { label: "BBQ at Hostel", icon: Utensils }, { label: "Drinks", icon: Beer }, { label: "DJ Night", icon: Disc3 }] },
               { day: "SUN", subtitle: "See You Next Time", durations: ['7'], activities: [{ label: "Breakfast", icon: Coffee }, { label: "Check Out", icon: LogOut }] },
             ];
-            const days = allDays.filter((d) => d.durations.includes(itineraryDuration));
-            const desktopCols = itineraryDuration === '7' ? 'lg:grid-cols-8' : 'lg:grid-cols-5';
+            const days = allDays.filter((d) => d.durations.includes(duration));
+            const desktopCols = duration === '7' ? 'lg:grid-cols-8' : 'lg:grid-cols-5';
             return (
               <>
                 {/* Desktop / tablet: column grid */}
