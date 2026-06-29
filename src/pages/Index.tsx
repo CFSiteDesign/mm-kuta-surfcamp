@@ -295,7 +295,7 @@ export default function Index() {
             ))}
           </div>
           {(() => {
-            const allDays = [
+            const allDays: { day: string; subtitle: string; durations: Duration[]; activities: { label: string; icon: LucideIcon }[] }[] = [
               { day: "CHECK-IN", subtitle: "Welcome to the Crew", durations: ['4','7'], activities: [{ label: "Welcome Session", icon: Users }, { label: "Pub Quiz", icon: HelpCircle }] },
               { day: "MON", subtitle: "Kick-Off Day", durations: ['4','7'], activities: [{ label: "Breakfast", icon: Coffee }, { label: "Welcome Session", icon: Users }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Surf", icon: Waves }, { label: "Family Dinner", icon: Utensils }, { label: "Karaoke", icon: Mic }] },
               { day: "TUE", subtitle: "Into the Swing", durations: ['4','7'], activities: [{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Theory", icon: BookOpen }, { label: "Music Quiz", icon: Music }] },
@@ -304,7 +304,7 @@ export default function Index() {
               { day: "FRI", subtitle: "Big Night Energy", durations: ['7'], activities: [{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Boozy Bingo", icon: Beer }] },
               { day: "SAT", subtitle: "The Last Hurrah", durations: ['7'], activities: [{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Sunset", icon: Sunset }, { label: "DJ Night", icon: Disc3 }] },
               { day: "SUN", subtitle: "See You Next Time", durations: ['7'], activities: [{ label: "Breakfast", icon: Coffee }, { label: "Check Out", icon: LogOut }] },
-            ] as const;
+            ];
             const days = allDays.filter((d) => d.durations.includes(itineraryDuration));
             const desktopCols = itineraryDuration === '7' ? 'lg:grid-cols-8' : 'lg:grid-cols-4';
             return (
