@@ -176,7 +176,7 @@ export default function Index() {
                 <span className="bg-pink px-4 py-2 rounded-full text-sm font-bold shadow-sm">📅 Every Monday 9AM</span>
                 <span className="bg-blue px-4 py-2 rounded-full text-sm font-bold shadow-sm">⏱️ {pricing.nights}</span>
                 <span className="bg-coral/20 px-4 py-2 rounded-full text-sm font-bold shadow-sm">👥 Max 16 Guests</span>
-                <span className="bg-green px-4 py-2 rounded-full text-sm font-bold shadow-sm">🍽️ Breakfast + Lunch & 25% Off MM Bar & Restaurant</span>
+                <span className="bg-green-500 px-4 py-2 rounded-full text-sm font-bold shadow-sm">🍽️ Breakfast + Lunch & 25% Off MM Bar & Restaurant</span>
               </div>
               <div id="book" className="flex flex-col sm:flex-row gap-2 mb-6">
                 <span className="bg-yellow text-foreground px-5 py-3 rounded-2xl -rotate-2 shadow-md border border-border font-display text-xl uppercase tracking-wider inline-block">All Inclusive Surf</span>
