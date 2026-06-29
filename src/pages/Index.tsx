@@ -280,22 +280,9 @@ export default function Index() {
           <h2 className="font-display text-4xl md:text-5xl text-foreground uppercase tracking-wider mb-4">
             Your Week, Sorted
           </h2>
-          <p className="text-muted-foreground text-lg mb-8 max-w-2xl">
-            {itineraryDuration === '7' ? 'Seven' : 'Four'} days of waves, vibes, and unforgettable moments. Here's how it goes down.
+          <p className="text-muted-foreground text-lg mb-10 max-w-2xl">
+            {duration === '7' ? 'Seven' : 'Four'} days of waves, vibes, and unforgettable moments. Here's how it goes down.
           </p>
-          {/* Itinerary duration toggle */}
-          <div className="inline-flex bg-card border border-border rounded-full p-1 mb-10 shadow-sm">
-            {(['4', '7'] as Duration[]).map((d) => (
-              <button
-                key={d}
-                type="button"
-                onClick={() => setItineraryDuration(d)}
-                className={`px-5 py-2 rounded-full font-display text-base uppercase tracking-wider transition-all ${itineraryDuration === d ? 'bg-coral text-primary-foreground shadow-sm' : 'text-foreground/70 hover:text-foreground'}`}
-              >
-                {d} Days
-              </button>
-            ))}
-          </div>
           {(() => {
             const allDays: { day: string; subtitle: string; durations: Duration[]; activities: { label: string; icon: LucideIcon }[] }[] = [
               { day: "SUN", subtitle: "Check-In Day", durations: ['4'], activities: [{ label: "Check-In", icon: BedDouble }] },
