@@ -163,66 +163,68 @@ export default function Index() {
 
       {/* ===================== YOUR BASECAMP ===================== */}
       <section className="bg-cream py-12 md:py-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row gap-12 items-center">
-          <div className="w-full md:w-1/2">
-            <h2 className="font-display text-3xl md:text-5xl text-coral uppercase tracking-wider mb-6">
-              Your Surf Basecamp in Kuta
-            </h2>
-            <p className="text-base md:text-lg text-foreground/80 leading-relaxed mb-6">
-              Ready to level up your island life? Join our epic Surf Camp, kicking off every Monday at 9AM, where salty hair, new mates, and unforgettable sessions are all part of the plan. Whether you're a total beginner or chasing cleaner lines, this week is all about surfing, social vibes, and living your best backpacker life.
-            </p>
-            <div className="flex flex-wrap gap-3 mb-6">
-              <span className="bg-yellow px-4 py-2 rounded-full text-sm font-bold shadow-sm">🏄 All Levels Welcome</span>
-              <span className="bg-pink px-4 py-2 rounded-full text-sm font-bold shadow-sm">📅 Every Monday 9AM</span>
-              <span className="bg-blue px-4 py-2 rounded-full text-sm font-bold shadow-sm">⏱️ {pricing.nights}</span>
-              <span className="bg-coral/20 px-4 py-2 rounded-full text-sm font-bold shadow-sm">👥 Max 16 Guests</span>
-            </div>
-            <div id="book" className="flex flex-col sm:flex-row gap-2 mb-6">
-              <span className="bg-yellow text-foreground px-5 py-3 rounded-2xl -rotate-2 shadow-md border border-border font-display text-xl uppercase tracking-wider inline-block">All Inclusive Surf</span>
-              <span className="bg-yellow text-foreground px-5 py-3 rounded-2xl rotate-1 shadow-md border border-border font-display text-xl uppercase tracking-wider inline-block">All Inclusive Stays</span>
-            </div>
-            {/* Duration toggle */}
-            <div className="inline-flex bg-card border border-border rounded-full p-1 mb-4 shadow-sm">
-              {(['4', '7'] as Duration[]).map((d) => (
-                <button
-                  key={d}
-                  type="button"
-                  onClick={() => setDuration(d)}
-                  className={`px-5 py-2 rounded-full font-display text-base uppercase tracking-wider transition-all ${duration === d ? 'bg-coral text-primary-foreground shadow-sm' : 'text-foreground/70 hover:text-foreground'}`}
-                >
-                  {d} Days
-                </button>
-              ))}
-            </div>
-            <div className="bg-card rounded-xl p-5 shadow-sm border border-border">
-              <p className="font-display text-2xl text-coral uppercase tracking-wider mb-1">{pricing.usd} All Inclusive</p>
-              <p className="text-sm text-muted-foreground">{pricing.idr}</p>
-            </div>
-
-            {/* Secure-your-spot reinforcement */}
-            <div className="mt-4 bg-[#FF6A00] rounded-xl p-5 shadow-md flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
-              <div className="flex-1">
-                <p className="font-display text-xl md:text-2xl text-white uppercase tracking-wider leading-tight">
-                  Secure today for only $100
-                </p>
-                <p className="text-sm text-white/90 mt-1">
-                  Just a $100 deposit locks in your spot — pay the rest later. Limited to 16 spots per week.
-                </p>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row gap-12 items-center">
+            <div className="w-full md:w-1/2">
+              <h2 className="font-display text-3xl md:text-5xl text-coral uppercase tracking-wider mb-6">
+                Your Surf Basecamp in Kuta
+              </h2>
+              <p className="text-base md:text-lg text-foreground/80 leading-relaxed mb-6">
+                Ready to level up your island life? Join our epic Surf Camp, kicking off every Monday at 9AM, where salty hair, new mates, and unforgettable sessions are all part of the plan. Whether you're a total beginner or chasing cleaner lines, this week is all about surfing, social vibes, and living your best backpacker life.
+              </p>
+              <div className="flex flex-wrap gap-3 mb-6">
+                <span className="bg-yellow px-4 py-2 rounded-full text-sm font-bold shadow-sm">🏄 All Levels Welcome</span>
+                <span className="bg-pink px-4 py-2 rounded-full text-sm font-bold shadow-sm">📅 Every Monday 9AM</span>
+                <span className="bg-blue px-4 py-2 rounded-full text-sm font-bold shadow-sm">⏱️ {pricing.nights}</span>
+                <span className="bg-coral/20 px-4 py-2 rounded-full text-sm font-bold shadow-sm">👥 Max 16 Guests</span>
               </div>
-              <a
-                href={bookUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="shrink-0 bg-white text-[#FF6A00] px-7 py-3 rounded-full font-display text-lg uppercase tracking-wider hover:brightness-95 transition-all shadow-sm"
-              >
-                Secure My Spot
-              </a>
+              <div id="book" className="flex flex-col sm:flex-row gap-2 mb-6">
+                <span className="bg-yellow text-foreground px-5 py-3 rounded-2xl -rotate-2 shadow-md border border-border font-display text-xl uppercase tracking-wider inline-block">All Inclusive Surf</span>
+                <span className="bg-yellow text-foreground px-5 py-3 rounded-2xl rotate-1 shadow-md border border-border font-display text-xl uppercase tracking-wider inline-block">All Inclusive Stays</span>
+              </div>
+              {/* Duration toggle */}
+              <div className="inline-flex bg-card border border-border rounded-full p-1 mb-4 shadow-sm">
+                {(['4', '7'] as Duration[]).map((d) => (
+                  <button
+                    key={d}
+                    type="button"
+                    onClick={() => setDuration(d)}
+                    className={`px-5 py-2 rounded-full font-display text-base uppercase tracking-wider transition-all ${duration === d ? 'bg-coral text-primary-foreground shadow-sm' : 'text-foreground/70 hover:text-foreground'}`}
+                  >
+                    {d} Days
+                  </button>
+                ))}
+              </div>
+              <div className="bg-card rounded-xl p-5 shadow-sm border border-border">
+                <p className="font-display text-2xl text-coral uppercase tracking-wider mb-1">{pricing.usd} All Inclusive</p>
+                <p className="text-sm text-muted-foreground">{pricing.idr}</p>
+              </div>
+            </div>
+            <div className="w-full md:w-1/2">
+              <div className="torn-edge-all overflow-hidden">
+                <img src={surfLesson2} alt="Mad Monkey surf camp vibes" className="w-full h-[350px] md:h-[450px] object-cover" loading="lazy" />
+              </div>
             </div>
           </div>
-          <div className="w-full md:w-1/2">
-            <div className="torn-edge-all overflow-hidden">
-              <img src={surfLesson2} alt="Mad Monkey surf camp vibes" className="w-full h-[350px] md:h-[450px] object-cover" loading="lazy" />
+
+          {/* Secure-your-spot reinforcement */}
+          <div className="mt-6 md:mt-8 bg-[#FF6A00] rounded-xl p-3 sm:p-4 shadow-md flex flex-col sm:flex-row items-center gap-3 sm:gap-5 text-center sm:text-left">
+            <div className="flex-1">
+              <p className="font-display text-lg md:text-xl text-white uppercase tracking-wider leading-tight">
+                Secure today for only $100
+              </p>
+              <p className="text-xs sm:text-sm text-white/90 mt-0.5">
+                Just a $100 deposit locks in your spot — pay the rest later. Limited to 16 spots per week.
+              </p>
             </div>
+            <a
+              href={bookUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 bg-white text-[#FF6A00] px-6 py-2 rounded-full font-display text-base uppercase tracking-wider hover:brightness-95 transition-all shadow-sm"
+            >
+              Secure My Spot
+            </a>
           </div>
         </div>
       </section>
