@@ -180,11 +180,16 @@ export default function Index() {
                 <span className="bg-blue text-foreground px-4 py-2 rounded-full text-sm font-bold shadow-sm">🍽️ Breakfast + Lunch</span>
                 <span className="bg-pink text-foreground px-4 py-2 rounded-full text-sm font-bold shadow-sm">25% Off MM Bar & Restaurant</span>
               </div>
-              <div id="book" className="flex flex-col sm:flex-row gap-2 mb-6">
+              <div id="book" className="flex flex-col sm:flex-row gap-2">
                 <span className="bg-yellow text-foreground px-5 py-3 rounded-2xl -rotate-2 shadow-md border border-border font-display text-xl uppercase tracking-wider inline-block">All Inclusive Surf</span>
                 <span className="bg-yellow text-foreground px-5 py-3 rounded-2xl rotate-1 shadow-md border border-border font-display text-xl uppercase tracking-wider inline-block">All Inclusive Stays</span>
               </div>
-              <div className="flex flex-col md:flex-row gap-3">
+            </div>
+            <div className="w-full md:w-1/2 flex flex-col gap-3">
+              <div className="torn-edge-all overflow-hidden">
+                <img src={surfLesson2} alt="Mad Monkey surf camp vibes" className="w-full h-[350px] md:h-[450px] object-cover" loading="lazy" />
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3">
                 {/* Duration toggle - two equal prominent boxes */}
                 <div className="flex-1 flex gap-2">
                   {(['4', '7'] as Duration[]).map((d, i) => (
@@ -207,11 +212,6 @@ export default function Index() {
                   <p className="font-display text-2xl text-coral uppercase tracking-wider mb-1">{pricing.usd} All Inclusive</p>
                   <p className="text-sm text-muted-foreground">{pricing.idr}</p>
                 </div>
-              </div>
-            </div>
-            <div className="w-full md:w-1/2">
-              <div className="torn-edge-all overflow-hidden">
-                <img src={surfLesson2} alt="Mad Monkey surf camp vibes" className="w-full h-[350px] md:h-[450px] object-cover" loading="lazy" />
               </div>
             </div>
           </div>
