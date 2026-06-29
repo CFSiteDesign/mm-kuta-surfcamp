@@ -40,13 +40,25 @@ import priceSticker from '@/assets/price-sticker-clean.png';
 import stayPool from '@/assets/stay-pool.jpg';
 import stayJacuzzi from '@/assets/stay-jacuzzi.png';
 
-const BOOK_NOW_URL = 'https://madmonkeyhostels.com/tours-events/surf-camp';
+const BOOK_URLS = {
+  '7': 'https://madmonkeyhostels.com/tours-events/surf-camp',
+  '4': 'https://madmonkeyhostels.com/tours-events/surf-camp-4-day',
+} as const;
+type Duration = keyof typeof BOOK_URLS;
+const PRICING: Record<Duration, { usd: string; idr: string; nights: string }> = {
+  '7': { usd: '$499 USD', idr: '8,500,000 IDR per person / all inclusive', nights: '7 Days' },
+  '4': { usd: '$249 USD', idr: '4,250,000 IDR per person / all inclusive', nights: '4 Days' },
+};
 
 export default function Index() {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
   const [submitting, setSubmitting] = useState(false);
   const [showBanner, setShowBanner] = useState(false);
+  const [duration, setDuration] = useState<Duration>('7');
+  const [itineraryDuration, setItineraryDuration] = useState<Duration>('7');
+  const bookUrl = BOOK_URLS[duration];
+  const pricing = PRICING[duration];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -100,7 +112,7 @@ export default function Index() {
             <a href="#contact" className="inline-block bg-card text-foreground px-8 py-4 font-display text-xl md:text-2xl uppercase tracking-wider hover:brightness-95 transition-all shadow-lg rounded-full">
               Ask Us Anything
             </a>
-            <a href={BOOK_NOW_URL} target="_blank" rel="noopener noreferrer" className="inline-block bg-coral text-primary-foreground px-8 py-4 font-display text-xl md:text-2xl uppercase tracking-wider hover:brightness-110 transition-all shadow-lg rounded-full">
+            <a href="#book" className="inline-block bg-coral text-primary-foreground px-8 py-4 font-display text-xl md:text-2xl uppercase tracking-wider hover:brightness-110 transition-all shadow-lg rounded-full">
               Book Now
             </a>
           </div>
