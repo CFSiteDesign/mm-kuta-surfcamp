@@ -47,7 +47,7 @@ const BOOK_URLS = {
 } as const;
 type Duration = keyof typeof BOOK_URLS;
 const PRICING: Record<Duration, { usd: string; idr: string; nights: string }> = {
-  '7': { usd: '$499 USD', idr: '8,500,000 IDR per person / all inclusive', nights: '7 Days' },
+  '7': { usd: '$499 USD', idr: '8,500,000 IDR per person / all inclusive', nights: '4 or 7 Days' },
   '4': { usd: '$249 USD', idr: '4,250,000 IDR per person / all inclusive', nights: '4 Days' },
 };
 
