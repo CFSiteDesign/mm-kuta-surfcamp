@@ -164,7 +164,7 @@ export default function Index() {
       {/* ===================== YOUR BASECAMP ===================== */}
       <section className="bg-cream py-12 md:py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row gap-12 items-center">
+          <div className="flex flex-col md:flex-row gap-12 md:items-end items-center">
             <div className="w-full md:w-1/2">
               <h2 className="font-display text-3xl md:text-5xl text-coral uppercase tracking-wider mb-6">
                 Your Surf Basecamp in Kuta
