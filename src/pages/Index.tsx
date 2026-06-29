@@ -11,7 +11,6 @@ import {
   BookOpen,
   Music,
   PartyPopper,
-  Video,
   CircleDot,
   Beer,
   Sunset,
@@ -22,6 +21,11 @@ import {
   BedDouble,
   Bath,
   GlassWater,
+  Footprints,
+  Flame,
+  Gift,
+  Target,
+  Moon,
   type LucideIcon,
 } from 'lucide-react';
 import SiteHeader from '@/components/SiteHeader';
