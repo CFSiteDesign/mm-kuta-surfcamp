@@ -216,7 +216,7 @@ export default function Index() {
                 Secure today for only $100
               </p>
               <p className="text-xs sm:text-sm text-white/90 mt-0.5">
-                Just a $100 deposit locks in your spot — pay the rest later. Limited to 16 spots per week.
+                Just a $100 deposit locks in your spot — pay the rest later. Limited to 16 spots.
               </p>
             </div>
             <a
