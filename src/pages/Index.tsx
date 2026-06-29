@@ -297,17 +297,19 @@ export default function Index() {
           </div>
           {(() => {
             const allDays: { day: string; subtitle: string; durations: Duration[]; activities: { label: string; icon: LucideIcon }[] }[] = [
-              { day: "CHECK-IN", subtitle: "Welcome to the Crew", durations: ['4','7'], activities: [{ label: "Check-In", icon: BedDouble }] },
+              { day: "SUN", subtitle: "Check-In Day", durations: ['4'], activities: [{ label: "Check-In", icon: BedDouble }] },
+              { day: "CHECK-IN", subtitle: "Welcome to the Crew", durations: ['7'], activities: [{ label: "Check-In", icon: BedDouble }] },
               { day: "MON", subtitle: "Kick-Off Day", durations: ['4','7'], activities: [{ label: "Welcome Session", icon: Users }, { label: "Theory & Pop-Ups", icon: BookOpen }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Welcome Pack", icon: Gift }, { label: "Family Dinner", icon: Utensils }, { label: "Karaoke", icon: Mic }] },
               { day: "TUE", subtitle: "Into the Swing", durations: ['4','7'], activities: [{ label: "Run Club", icon: Footprints }, { label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Beach Bonfire", icon: Flame }] },
               { day: "WED", subtitle: "Midweek Splash", durations: ['4','7'], activities: [{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Pool Party", icon: PartyPopper }, { label: "Surf Skate Meet", icon: CircleDot }, { label: "DJ Party Night", icon: Disc3 }] },
+              { day: "THU", subtitle: "See You Next Time", durations: ['4'], activities: [{ label: "Breakfast", icon: Coffee }, { label: "Check Out", icon: LogOut }] },
               { day: "THU", subtitle: "Dial It In", durations: ['7'], activities: [{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Beach Bonfire", icon: Flame }] },
               { day: "FRI", subtitle: "Big Night Energy", durations: ['7'], activities: [{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Paintball / Ring Making", icon: Target }, { label: "Free Evening", icon: Moon }] },
               { day: "SAT", subtitle: "The Last Hurrah", durations: ['7'], activities: [{ label: "Morning Surf", icon: Waves }, { label: "BBQ at Hostel", icon: Utensils }, { label: "Drinks", icon: Beer }, { label: "DJ Night", icon: Disc3 }] },
               { day: "SUN", subtitle: "See You Next Time", durations: ['7'], activities: [{ label: "Breakfast", icon: Coffee }, { label: "Check Out", icon: LogOut }] },
             ];
             const days = allDays.filter((d) => d.durations.includes(itineraryDuration));
-            const desktopCols = itineraryDuration === '7' ? 'lg:grid-cols-8' : 'lg:grid-cols-4';
+            const desktopCols = itineraryDuration === '7' ? 'lg:grid-cols-8' : 'lg:grid-cols-5';
             return (
               <>
                 {/* Desktop / tablet: column grid */}
