@@ -23,6 +23,7 @@ import {
   Gift,
   Target,
   Moon,
+  Video,
   type LucideIcon,
 } from 'lucide-react';
 import SiteHeader from '@/components/SiteHeader';
