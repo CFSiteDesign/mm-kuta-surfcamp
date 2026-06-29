@@ -23,6 +23,7 @@ import {
   Gift,
   Target,
   Moon,
+  Video,
   type LucideIcon,
 } from 'lucide-react';
 import SiteHeader from '@/components/SiteHeader';
@@ -289,7 +290,8 @@ export default function Index() {
               { day: "SUN", subtitle: "Check-In Day", durations: ['4'], activities: [{ label: "Check-In", icon: BedDouble }] },
               { day: "CHECK-IN", subtitle: "Welcome to the Crew", durations: ['7'], activities: [{ label: "Check-In", icon: BedDouble }] },
               { day: "MON", subtitle: "Kick-Off Day", durations: ['4','7'], activities: [{ label: "Welcome Session", icon: Users }, { label: "Theory & Pop-Ups", icon: BookOpen }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Welcome Pack", icon: Gift }, { label: "Family Dinner", icon: Utensils }, { label: "Karaoke", icon: Mic }] },
-              { day: "TUE", subtitle: "Into the Swing", durations: ['4','7'], activities: [{ label: "Run Club", icon: Footprints }, { label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Beach Bonfire", icon: Flame }] },
+              { day: "TUE", subtitle: "Into the Swing", durations: ['4'], activities: [{ label: "Run Club", icon: Footprints }, { label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Beach Bonfire", icon: Flame }] },
+              { day: "TUE", subtitle: "Into the Swing", durations: ['7'], activities: [{ label: "Run Club", icon: Footprints }, { label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Video Analysis", icon: Video }, { label: "Afternoon Surf", icon: Waves }, { label: "Beach Bonfire", icon: Flame }] },
               { day: "WED", subtitle: "Midweek Splash", durations: ['4','7'], activities: [{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Pool Party", icon: PartyPopper }, { label: "Surf Skate Meet", icon: CircleDot }, { label: "DJ Party Night", icon: Disc3 }] },
               { day: "THU", subtitle: "See You Next Time", durations: ['4'], activities: [{ label: "Breakfast", icon: Coffee }, { label: "Check Out", icon: LogOut }] },
               { day: "THU", subtitle: "Dial It In", durations: ['7'], activities: [{ label: "Breakfast", icon: Coffee }, { label: "Morning Surf", icon: Waves }, { label: "Lunch", icon: UtensilsCrossed }, { label: "Afternoon Surf", icon: Waves }, { label: "Beach Bonfire", icon: Flame }] },
@@ -378,6 +380,9 @@ export default function Index() {
                   <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Surf board rental for the week</li>
                   <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Rash vest provided</li>
                   <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Professional surf instructors</li>
+                  {duration === '7' && (
+                    <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Video analysis sessions</li>
+                  )}
                   <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Welcome pack with merch</li>
                   <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>25% off food & drinks at Mad Monkey</li>
                 </ul>
