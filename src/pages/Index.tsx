@@ -380,6 +380,9 @@ export default function Index() {
                   <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Surf board rental for the week</li>
                   <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Rash vest provided</li>
                   <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Professional surf instructors</li>
+                  {duration === '7' && (
+                    <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Video analysis sessions</li>
+                  )}
                   <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>Welcome pack with merch</li>
                   <li className="flex items-start gap-3"><span className="text-coral font-bold text-lg">•</span>25% off food & drinks at Mad Monkey</li>
                 </ul>
