@@ -174,7 +174,7 @@ export default function Index() {
               <div className="flex flex-wrap gap-3 mb-6">
                 <span className="bg-yellow px-4 py-2 rounded-full text-sm font-bold shadow-sm">🏄 All Levels Welcome</span>
                 <span className="bg-pink px-4 py-2 rounded-full text-sm font-bold shadow-sm">📅 Every Monday 9AM</span>
-                <span className="bg-blue px-4 py-2 rounded-full text-sm font-bold shadow-sm">⏱️ {pricing.nights}</span>
+                <span className="bg-blue px-4 py-2 rounded-full text-sm font-bold shadow-sm">⏱️ 4 or 7 Days</span>
                 <span className="bg-coral/20 px-4 py-2 rounded-full text-sm font-bold shadow-sm">👥 Max 16 Guests</span>
                 <span className="bg-green-500 px-4 py-2 rounded-full text-sm font-bold shadow-sm">🍽️ Breakfast + Lunch & 25% Off MM Bar & Restaurant</span>
               </div>
