@@ -162,7 +162,7 @@ export default function Index() {
       </section>
 
       {/* ===================== YOUR BASECAMP ===================== */}
-      <section className="bg-cream py-12 md:py-20">
+      <section id="basecamp" className="bg-cream py-12 md:py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row gap-12 md:items-end items-center">
             <div className="w-full md:w-1/2">
