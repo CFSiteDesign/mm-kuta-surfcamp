@@ -146,10 +146,10 @@ export default function SiteHeader() {
                 Login
               </a>
               <a
-                href={`${MM_BASE}/book`}
-                className="bg-coral text-primary-foreground px-5 py-2 rounded-full text-sm font-bold hover:bg-coral/90 transition-all shadow-sm flex items-center gap-1"
+                href="#book"
+                className="bg-coral text-primary-foreground px-5 py-2 rounded-full text-sm font-bold hover:bg-coral/90 transition-all shadow-sm"
               >
-                Book Now <ChevronDown size={14} />
+                Book Now
               </a>
 
               {/* Mobile hamburger */}
