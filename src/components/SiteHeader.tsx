@@ -1,8 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
 import { ChevronDown, Search, User, MessageSquare, Home } from 'lucide-react';
 import logo from '@/assets/menu-bar-logo.png';
+import { withTracking } from '@/lib/tracking';
 
 const MM_BASE = 'https://madmonkeyhostels.com';
+
+/** Main-site URL with any campaign params from the landing page forwarded on. */
+const mm = (path = '') => withTracking(`${MM_BASE}${path}`);
 
 const sleepLocations = {
   AUSTRALIA: [{ name: 'Coogee Beach Sydney', slug: 'coogee-beach-sydney' }],
@@ -82,13 +86,13 @@ export default function SiteHeader() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-[72px]">
             {/* Logo */}
-            <a href={MM_BASE} className="shrink-0">
+            <a href={mm()} className="shrink-0">
               <img src={logo} alt="Mad Monkey Surf Camp" className="h-8 md:h-10 w-auto object-contain" />
             </a>
 
             {/* Desktop Nav */}
             <div className="hidden lg:flex items-center gap-1">
-              <a href={`${MM_BASE}/our-story`} className={`px-3 py-2 text-sm font-semibold ${textColor} ${hoverColor} transition-colors`}>
+              <a href={mm('/our-story')} className={`px-3 py-2 text-sm font-semibold ${textColor} ${hoverColor} transition-colors`}>
                 Our Story
               </a>
 
@@ -106,7 +110,7 @@ export default function SiteHeader() {
                       <div key={region}>
                         <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-2">{region}</p>
                         {locations.map(loc => (
-                          <a key={loc.slug} href={`${MM_BASE}/${loc.slug}`} className="block text-sm py-1 text-foreground hover:text-coral transition-colors">
+                          <a key={loc.slug} href={mm(`/${loc.slug}`)} className="block text-sm py-1 text-foreground hover:text-coral transition-colors">
                             {loc.name}
                           </a>
                         ))}
@@ -127,7 +131,7 @@ export default function SiteHeader() {
                 {expOpen && (
                   <div className="absolute top-full left-0 mt-2 bg-card rounded-2xl shadow-2xl p-4 min-w-[200px] animate-fade-in z-50">
                     {experienceLinks.map(link => (
-                      <a key={link.slug} href={`${MM_BASE}/${link.slug}`} className="block text-sm py-2 text-foreground hover:text-coral transition-colors">
+                      <a key={link.slug} href={mm(`/${link.slug}`)} className="block text-sm py-2 text-foreground hover:text-coral transition-colors">
                         {link.name}
                       </a>
                     ))}
@@ -135,14 +139,14 @@ export default function SiteHeader() {
                 )}
               </div>
 
-              <a href={`${MM_BASE}/mad-loyalty`} className={`px-3 py-2 text-sm font-semibold ${textColor} ${hoverColor} transition-colors`}>
+              <a href={mm('/mad-loyalty')} className={`px-3 py-2 text-sm font-semibold ${textColor} ${hoverColor} transition-colors`}>
                 Mad Loyalty
               </a>
             </div>
 
             {/* Right side */}
             <div className="flex items-center gap-2">
-              <a href={`${MM_BASE}/login`} target="_self" className={`hidden lg:block px-3 py-2 text-sm font-semibold ${textColor} ${hoverColor} transition-colors`}>
+              <a href={mm('/login')} target="_self" className={`hidden lg:block px-3 py-2 text-sm font-semibold ${textColor} ${hoverColor} transition-colors`}>
                 Login
               </a>
               <a
@@ -167,7 +171,7 @@ export default function SiteHeader() {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="lg:hidden bg-cream shadow-lg py-6 px-6 flex flex-col gap-3 animate-fade-in max-h-[80vh] overflow-y-auto">
-            <a href={`${MM_BASE}/our-story`} className="font-semibold text-lg">Our Story</a>
+            <a href={mm('/our-story')} className="font-semibold text-lg">Our Story</a>
             <details className="group">
               <summary className="font-semibold text-lg cursor-pointer list-none flex items-center justify-between">
                 Sleep <ChevronDown size={16} className="group-open:rotate-180 transition-transform" />
@@ -177,7 +181,7 @@ export default function SiteHeader() {
                   <div key={region}>
                     <p className="text-xs font-bold text-muted-foreground uppercase mb-1">{region}</p>
                     {locations.map(loc => (
-                      <a key={loc.slug} href={`${MM_BASE}/${loc.slug}`} className="block text-sm py-0.5 hover:text-coral">{loc.name}</a>
+                      <a key={loc.slug} href={mm(`/${loc.slug}`)} className="block text-sm py-0.5 hover:text-coral">{loc.name}</a>
                     ))}
                   </div>
                 ))}
@@ -189,12 +193,12 @@ export default function SiteHeader() {
               </summary>
               <div className="mt-2 ml-2">
                 {experienceLinks.map(link => (
-                  <a key={link.slug} href={`${MM_BASE}/${link.slug}`} className="block text-sm py-1 hover:text-coral">{link.name}</a>
+                  <a key={link.slug} href={mm(`/${link.slug}`)} className="block text-sm py-1 hover:text-coral">{link.name}</a>
                 ))}
               </div>
             </details>
-            <a href={`${MM_BASE}/mad-loyalty`} className="font-semibold text-lg">Mad Loyalty</a>
-            <a href={`${MM_BASE}/login`} target="_self" className="font-semibold text-lg">Login</a>
+            <a href={mm('/mad-loyalty')} className="font-semibold text-lg">Mad Loyalty</a>
+            <a href={mm('/login')} target="_self" className="font-semibold text-lg">Login</a>
           </div>
         )}
       </nav>

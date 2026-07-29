@@ -4,6 +4,7 @@ import tiktokIcon from '@/assets/social/tiktok.svg';
 import xIcon from '@/assets/social/x.webp';
 import facebookIcon from '@/assets/social/facebook.svg';
 import youtubeIcon from '@/assets/social/youtube.svg';
+import { withTracking } from '@/lib/tracking';
 
 const MM_BASE = 'https://madmonkeyhostels.com';
 
@@ -117,7 +118,7 @@ export default function SiteFooter() {
                 {col.links.map(link => (
                   <li key={link.name}>
                     <a
-                      href={link.href}
+                      href={withTracking(link.href)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-sm text-primary-foreground/60 hover:text-coral transition-colors"

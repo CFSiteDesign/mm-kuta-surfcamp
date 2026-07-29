@@ -41,6 +41,7 @@ import surfLesson4 from '@/assets/surf-lesson-4.jpg';
 import priceSticker from '@/assets/price-sticker-clean.png';
 import stayPool from '@/assets/stay-pool.jpg';
 import stayJacuzzi from '@/assets/stay-jacuzzi.png';
+import { withTracking } from '@/lib/tracking';
 
 const BOOK_URLS = {
   '7': 'https://madmonkeyhostels.com/tours-events/surf-camp',
@@ -58,7 +59,7 @@ export default function Index() {
   const [submitting, setSubmitting] = useState(false);
   const [showBanner, setShowBanner] = useState(false);
   const [duration, setDuration] = useState<Duration>('7');
-  const bookUrl = BOOK_URLS[duration];
+  const bookUrl = withTracking(BOOK_URLS[duration]);
   const pricing = PRICING[duration];
 
   const handleSubmit = async (e: React.FormEvent) => {
